@@ -50,6 +50,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F2A38FC20D6848B00636EF3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				0FB6936B208CEC2200CEED01 /* HomeVC.swift */,
+				0FB6935D208CEB1400CEED01 /* Main.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		0FB6934D208CEB1400CEED01 = {
 			isa = PBXGroup;
 			children = (
@@ -73,13 +82,12 @@
 			children = (
 				0FB69359208CEB1400CEED01 /* AppDelegate.swift */,
 				0FB69372208CED1300CEED01 /* DefaultVC.swift */,
-				0FB6936B208CEC2200CEED01 /* HomeVC.swift */,
-				0FB6935D208CEB1400CEED01 /* Main.storyboard */,
 				0FB69360208CEB1500CEED01 /* Assets.xcassets */,
 				0FB69362208CEB1500CEED01 /* LaunchScreen.storyboard */,
 				0FB69365208CEB1500CEED01 /* Info.plist */,
 				0FB6936F208CEC8400CEED01 /* Login */,
 				0FB69376208CEFA400CEED01 /* CreateAccount */,
+				0F2A38FC20D6848B00636EF3 /* Home */,
 			);
 			path = ProjetAnnuel;
 			sourceTree = "<group>";

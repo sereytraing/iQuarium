@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rGU-m3-gUO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9pY-pe-YGy">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="428" y="244"/>
         </scene>
-        <!--Item 1-->
+        <!--hh-->
         <scene sceneID="4bZ-90-egh">
             <objects>
-                <viewController id="vEp-y2-fvz" customClass="HomeVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="hh" id="vEp-y2-fvz" customClass="HomeVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xoP-UU-mXZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +45,9 @@
                                 <rect key="frame" x="164" y="220" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="Puk-pF-cn6" kind="show" id="Fyf-aj-8ob"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,10 +59,42 @@
             </objects>
             <point key="canvasLocation" x="427" y="-420"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--bbb-->
+        <scene sceneID="rXK-ys-4Zy">
+            <objects>
+                <viewController title="bbb" id="Puk-pF-cn6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itc-Fb-uAq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="HTW-Cb-Mor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b9M-vJ-2CT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="-421"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7b6-zH-aMh">
+            <objects>
+                <navigationController storyboardIdentifier="Home" id="9pY-pe-YGy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCy-qZ-ipa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rGU-m3-gUO" kind="relationship" relationship="rootViewController" id="XSm-jX-JZk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyl-hP-eNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1476" y="-89"/>
+        </scene>
+        <!--iQuarium-->
         <scene sceneID="2cc-UK-XAJ">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarHome" id="rGU-m3-gUO" sceneMemberID="viewController">
+                <tabBarController id="rGU-m3-gUO" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="iQuarium" id="WjK-nz-v9v"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hIg-lb-mqc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

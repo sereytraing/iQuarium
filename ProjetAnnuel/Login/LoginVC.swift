@@ -31,7 +31,7 @@ class LoginVC: DefaultVC {
     }
     
     @IBAction func submitClicked(_ sender: Any) {
-        let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarHome") as! UITabBarController
+        let testController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! UINavigationController
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window?.rootViewController = testController
         guard let window = UIApplication.shared.keyWindow else {
