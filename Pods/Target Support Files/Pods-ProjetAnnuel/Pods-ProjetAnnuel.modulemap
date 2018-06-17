@@ -1,0 +1,6 @@
+framework module Pods_ProjetAnnuel {
+  umbrella header "Pods-ProjetAnnuel-umbrella.h"
+
+  export *
+  module * { export * }
+}
