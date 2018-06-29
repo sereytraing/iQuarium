@@ -19,6 +19,7 @@ public class SessionManager {
     static var instance:SessionManager?
     
     let token: String = "token"
+    let id: String = "id"
     let defaults = UserDefaults.standard
     
     func setToken(token: String) {
@@ -28,8 +29,17 @@ public class SessionManager {
     func getToken() -> String? {
         return defaults.string(forKey: self.token)
     }
+    
+    func setId(id: String) {
+        defaults.set(id, forKey: self.id)
+    }
+    
+    func getId() -> String? {
+        return defaults.string(forKey: self.id)
+    }
 
     func flush() {
         defaults.removeObject(forKey: self.token)
+        defaults.removeObject(forKey: self.id)
     }
 }

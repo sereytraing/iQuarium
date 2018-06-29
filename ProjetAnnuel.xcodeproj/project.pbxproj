@@ -11,6 +11,8 @@
 		0F7BABAE20E620D5003F72DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABAD20E620D5003F72DB /* User.swift */; };
 		0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F7BABAF20E623D5003F72DB /* Localizable.strings */; };
 		0F7BABB220E623ED003F72DB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB120E623ED003F72DB /* String.swift */; };
+		0F7BABB620E63351003F72DB /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB520E63351003F72DB /* Fish.swift */; };
+		0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB720E6335A003F72DB /* Aquarium.swift */; };
 		0FB6935A208CEB1400CEED01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69359208CEB1400CEED01 /* AppDelegate.swift */; };
 		0FB6935F208CEB1400CEED01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6935D208CEB1400CEED01 /* Main.storyboard */; };
 		0FB69361208CEB1500CEED01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FB69360208CEB1500CEED01 /* Assets.xcassets */; };
@@ -29,6 +31,8 @@
 		0F7BABAD20E620D5003F72DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7BABAF20E623D5003F72DB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		0F7BABB120E623ED003F72DB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		0F7BABB520E63351003F72DB /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
+		0F7BABB720E6335A003F72DB /* Aquarium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aquarium.swift; sourceTree = "<group>"; };
 		0FB69356208CEB1400CEED01 /* ProjetAnnuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetAnnuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB69359208CEB1400CEED01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FB6935E208CEB1400CEED01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				0F7BABAD20E620D5003F72DB /* User.swift */,
+				0F7BABB520E63351003F72DB /* Fish.swift */,
+				0F7BABB720E6335A003F72DB /* Aquarium.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,11 +290,13 @@
 			files = (
 				0FB69373208CED1300CEED01 /* DefaultVC.swift in Sources */,
 				0FB6935A208CEB1400CEED01 /* AppDelegate.swift in Sources */,
+				0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */,
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
+				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,
 				0F7BABAE20E620D5003F72DB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

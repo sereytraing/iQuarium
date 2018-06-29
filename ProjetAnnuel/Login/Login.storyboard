@@ -136,7 +136,7 @@
         <!--Navigation Controller-->
         <scene sceneID="97W-Mg-uZB">
             <objects>
-                <navigationController id="dUg-Gc-xCK" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNav" id="dUg-Gc-xCK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1VB-oh-l7Z">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

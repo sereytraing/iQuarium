@@ -12,8 +12,8 @@ import ObjectMapper
 class User : Mappable{
     var username: String?
     var id: String?
-    //var fishes: String?
-    //var aquariums
+    var fishes: [Fish]?
+    var aquariums: [Aquarium]?
     
     required init?(map: Map){
     }
@@ -21,7 +21,7 @@ class User : Mappable{
     func mapping(map: Map) {
         username <- map["username"]
         id <- map["_id"]
-        //fishes <- map["Fishes"]
-        //aquariums <- map["Aquariums"]
+        fishes <- map["Fishes"]
+        aquariums <- map["Aquariums"]
     }
 }

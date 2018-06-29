@@ -37,9 +37,10 @@ class LoginVC: DefaultVC {
         if let username = self.usernameTextField.text, let password = self.passwordTextField.text, !username.isEmpty && !password.isEmpty {
             self.requestLogin(username: username, password: password)
         } else {
-            self.okAlert(title: "Erreur", message: "insert_username".localized)
+            self.okAlert(title: "Erreur", message: "insert_username_password".localized)
         }
     }
+    
     @IBAction func createAccountClicked(_ sender: Any) {
     }
     
@@ -56,21 +57,43 @@ class LoginVC: DefaultVC {
             case .success:
                 if let token = response.result.value {
                     SessionManager.GetInstance().setToken(token: token)
-                }
-                let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! UINavigationController
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController = homeVC
-                guard let window = UIApplication.shared.keyWindow else {
-                    return
+                    self.requestGetProfile(token: token, username: username)
                 }
                 
-                UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-                    window.rootViewController = homeVC
-                }, completion: { _ in })
             case .failure:
-                self.okAlert(title: "Erreur", message: "Erreur \(String(describing: response.response?.statusCode))")
+                self.okAlert(title: "Erreur", message: "Erreur Auth \(String(describing: response.response?.statusCode))")
             }
         })
         
+    }
+    
+    func requestGetProfile(token: String, username: String) {
+        let headerToken: HTTPHeaders = ["Content-Type": "application/json",
+                                        "Authorization": token]
+        
+        let url = self.baseUrl + "/users/username/" + username
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<User>) in
+            switch response.result {
+            case .success:
+                if let user = response.result.value {
+                    if let id = user.id {
+                        SessionManager.GetInstance().setId(id: id)
+                    }
+                    let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! UINavigationController
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.window?.rootViewController = homeVC
+                    guard let window = UIApplication.shared.keyWindow else {
+                        return
+                    }
+                    
+                    UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+                        window.rootViewController = homeVC
+                    }, completion: { _ in })
+                }
+                
+            case .failure:
+                self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
+            }
+        })
     }
 }
