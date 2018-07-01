@@ -70,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLJ-WP-FfK">
-                                <rect key="frame" x="10" y="40.5" width="30" height="38"/>
+                                <rect key="frame" x="10" y="41" width="30" height="38"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <state key="normal" title="X">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.60392156860000001" green="0.86666666670000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.61313288560000001" green="0.88143903349999997" blue="0.81466918300000002" alpha="0.75808005141780821" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Nzv-jC-LiG" firstAttribute="centerX" secondItem="Odw-2l-uY5" secondAttribute="centerX" id="21v-UG-ofn"/>
                             <constraint firstItem="Dyk-DW-zhv" firstAttribute="centerX" secondItem="Odw-2l-uY5" secondAttribute="centerX" id="5W5-ny-PPf"/>

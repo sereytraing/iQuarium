@@ -61,6 +61,5 @@ class CreateAccountVC: DefaultVC {
                 self.okAlert(title: "Erreur", message: "Erreur \(String(describing: response.response?.statusCode))")
             }
         })
-        
     }
 }

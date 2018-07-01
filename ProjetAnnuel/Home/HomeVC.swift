@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class HomeVC: DefaultVC {
+class HomeVC: DefaultVC, UIScrollViewDelegate{
 
     var user: User?
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var noAquariumView: UIView!
     @IBOutlet weak var homeView: UIView!
     
@@ -23,9 +24,8 @@ class HomeVC: DefaultVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestGetProfile()
+        self.scrollView.delegate = self
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,25 +34,31 @@ class HomeVC: DefaultVC {
     func requestGetProfile() {
         let url = self.baseUrl + "/users/id/" + SessionManager.GetInstance().getId()!
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<User>) in
-            switch response.result {
-            case .success:
-                if let user = response.result.value {
-                    self.user = user
-                    if let aquarium = self.user?.aquariums, aquarium.isEmpty {
-                        self.noAquariumView.isHidden = false
-                    } else {
-                        self.noAquariumView.isHidden = true
-                    }
-                }
-                
-            case .failure:
+            
+            if response.response?.statusCode == 401 {
                 self.logOut()
-                self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
+            } else {
+                switch response.result {
+                case .success:
+                    if let user = response.result.value {
+                        self.user = user
+                        // TODO: A CHANGER APRES LES TESTS
+                        if let aquarium = self.user?.aquariums, aquarium.isEmpty {
+                            self.noAquariumView.isHidden = false
+                            self.homeView.isHidden = true
+                        } else {
+                            self.noAquariumView.isHidden = true
+                            self.homeView.isHidden = false
+                        }
+                    }
+                    
+                case .failure:
+                    self.logOut()
+                    self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
+                }
             }
         })
     }
-    
-    
     
     @IBAction func tmp(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
@@ -62,19 +68,5 @@ class HomeVC: DefaultVC {
     
     @IBAction func logOutClicked(_ sender: Any) {
         self.logOut()
-    }
-    
-    func logOut() {
-        SessionManager.GetInstance().flush()
-        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.window?.rootViewController = loginVC
-        guard let window = UIApplication.shared.keyWindow else {
-            return
-        }
-        
-        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
-            window.rootViewController = loginVC
-        }, completion: { _ in })
     }
 }

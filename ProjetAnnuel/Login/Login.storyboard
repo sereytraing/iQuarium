@@ -48,7 +48,6 @@
                                             <color key="titleColor" red="0.60392156862745094" green="0.8666666666666667" blue="0.79607843137254897" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="createAccountClicked:" destination="1tf-eK-Ppy" eventType="touchUpInside" id="isN-3T-KWB"/>
                                             <segue destination="H1G-u0-z9A" kind="show" id="lTi-CF-rj4"/>
                                         </connections>
                                     </button>
@@ -107,6 +106,9 @@
                                     <constraint firstItem="3b7-Sx-INE" firstAttribute="top" secondItem="j2p-Ct-enz" secondAttribute="bottom" constant="20" id="vLO-e5-Zjn"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Pl0-4C-Do9">
+                                <rect key="frame" x="169" y="388" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -117,12 +119,15 @@
                             <constraint firstAttribute="bottom" secondItem="4bZ-E8-hll" secondAttribute="bottom" id="ZIN-gq-cml"/>
                             <constraint firstItem="4bZ-E8-hll" firstAttribute="top" secondItem="U5e-65-p1k" secondAttribute="top" id="fKK-bV-1rj"/>
                             <constraint firstItem="gtS-H5-xM2" firstAttribute="centerY" secondItem="U5e-65-p1k" secondAttribute="centerY" multiplier="1.2" id="hBL-G3-RaS"/>
+                            <constraint firstItem="Pl0-4C-Do9" firstAttribute="centerX" secondItem="U5e-65-p1k" secondAttribute="centerX" id="jRU-Vi-VPV"/>
+                            <constraint firstItem="Pl0-4C-Do9" firstAttribute="centerY" secondItem="U5e-65-p1k" secondAttribute="centerY" id="ut6-MM-tD9"/>
                             <constraint firstItem="gtS-H5-xM2" firstAttribute="centerX" secondItem="U5e-65-p1k" secondAttribute="centerX" id="z0W-K0-J3x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IwK-LH-6Xh"/>
                     </view>
                     <navigationItem key="navigationItem" id="K88-Qf-EeD"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Pl0-4C-Do9" id="eop-t6-Czb"/>
                         <outlet property="createAccountButton" destination="3b7-Sx-INE" id="roE-4G-nZj"/>
                         <outlet property="passwordTextField" destination="BwQ-K1-Hul" id="8ef-G0-dBe"/>
                         <outlet property="submitButton" destination="j2p-Ct-enz" id="kko-87-uJL"/>

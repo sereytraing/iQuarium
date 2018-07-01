@@ -13,6 +13,8 @@
 		0F7BABB220E623ED003F72DB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB120E623ED003F72DB /* String.swift */; };
 		0F7BABB620E63351003F72DB /* Fish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB520E63351003F72DB /* Fish.swift */; };
 		0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB720E6335A003F72DB /* Aquarium.swift */; };
+		0F7BABBA20E638BD003F72DB /* CreateAquarium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABB920E638BD003F72DB /* CreateAquarium.swift */; };
+		0F7BABBD20E638FA003F72DB /* CreateAquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7BABBC20E638FA003F72DB /* CreateAquarium.storyboard */; };
 		0FB6935A208CEB1400CEED01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69359208CEB1400CEED01 /* AppDelegate.swift */; };
 		0FB6935F208CEB1400CEED01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6935D208CEB1400CEED01 /* Main.storyboard */; };
 		0FB69361208CEB1500CEED01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FB69360208CEB1500CEED01 /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		0F7BABB120E623ED003F72DB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0F7BABB520E63351003F72DB /* Fish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fish.swift; sourceTree = "<group>"; };
 		0F7BABB720E6335A003F72DB /* Aquarium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aquarium.swift; sourceTree = "<group>"; };
+		0F7BABB920E638BD003F72DB /* CreateAquarium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAquarium.swift; sourceTree = "<group>"; };
+		0F7BABBC20E638FA003F72DB /* CreateAquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAquarium.storyboard; sourceTree = "<group>"; };
 		0FB69356208CEB1400CEED01 /* ProjetAnnuel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetAnnuel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FB69359208CEB1400CEED01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FB6935E208CEB1400CEED01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		0F7BABBB20E638D1003F72DB /* CreateAquarium */ = {
+			isa = PBXGroup;
+			children = (
+				0F7BABB920E638BD003F72DB /* CreateAquarium.swift */,
+				0F7BABBC20E638FA003F72DB /* CreateAquarium.storyboard */,
+			);
+			path = CreateAquarium;
+			sourceTree = "<group>";
+		};
 		0FB6934D208CEB1400CEED01 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +140,7 @@
 				0F7BABB420E62663003F72DB /* Common */,
 				0FB6936F208CEC8400CEED01 /* Login */,
 				0FB69376208CEFA400CEED01 /* CreateAccount */,
+				0F7BABBB20E638D1003F72DB /* CreateAquarium */,
 				0F2A38FC20D6848B00636EF3 /* Home */,
 				0F7BABA820E6102C003F72DB /* Model */,
 				0F7BABB320E6264C003F72DB /* Extension */,
@@ -230,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB69371208CEC9300CEED01 /* Login.storyboard in Resources */,
+				0F7BABBD20E638FA003F72DB /* CreateAquarium.storyboard in Resources */,
 				0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */,
 				0FB69364208CEB1500CEED01 /* LaunchScreen.storyboard in Resources */,
 				0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */,
@@ -294,6 +309,7 @@
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
+				0F7BABBA20E638BD003F72DB /* CreateAquarium.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
 				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,

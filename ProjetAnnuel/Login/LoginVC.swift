@@ -16,6 +16,7 @@ class LoginVC: DefaultVC {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let header: HTTPHeaders = ["Content-Type": "application/json"]
     
@@ -35,13 +36,11 @@ class LoginVC: DefaultVC {
     
     @IBAction func submitClicked(_ sender: Any) {
         if let username = self.usernameTextField.text, let password = self.passwordTextField.text, !username.isEmpty && !password.isEmpty {
+            self.activityIndicator.startAnimating()
             self.requestLogin(username: username, password: password)
         } else {
             self.okAlert(title: "Erreur", message: "insert_username_password".localized)
         }
-    }
-    
-    @IBAction func createAccountClicked(_ sender: Any) {
     }
     
     func requestLogin(username: String, password: String) {
@@ -61,6 +60,7 @@ class LoginVC: DefaultVC {
                 }
                 
             case .failure:
+                self.activityIndicator.stopAnimating()
                 self.okAlert(title: "Erreur", message: "Erreur Auth \(String(describing: response.response?.statusCode))")
             }
         })
@@ -79,6 +79,7 @@ class LoginVC: DefaultVC {
                     if let id = user.id {
                         SessionManager.GetInstance().setId(id: id)
                     }
+                    self.activityIndicator.stopAnimating()
                     let homeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Home") as! UINavigationController
                     let appDelegate = UIApplication.shared.delegate as! AppDelegate
                     appDelegate.window?.rootViewController = homeVC
@@ -92,6 +93,7 @@ class LoginVC: DefaultVC {
                 }
                 
             case .failure:
+                self.activityIndicator.stopAnimating()
                 self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
             }
         })

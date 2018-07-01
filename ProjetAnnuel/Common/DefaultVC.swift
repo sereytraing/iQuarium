@@ -31,4 +31,17 @@ class DefaultVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func logOut() {
+        SessionManager.GetInstance().flush()
+        let loginVC = UIStoryboard(name: "Login", bundle: nil).instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = loginVC
+        guard let window = UIApplication.shared.keyWindow else {
+            return
+        }
+        
+        UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            window.rootViewController = loginVC
+        }, completion: { _ in })
+    }
 }
