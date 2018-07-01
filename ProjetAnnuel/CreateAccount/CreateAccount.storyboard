@@ -23,13 +23,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="XC7-Hj-Je0"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDt-5A-M4q">
                                 <rect key="frame" x="50" y="212" width="275" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.22711770304568524" green="0.22711770304568524" blue="0.22711770304568524" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="oJt-yv-zzI"/>
                                 </constraints>
@@ -39,13 +39,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ATj-mz-wV3"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzv-jC-LiG">
                                 <rect key="frame" x="50" y="151" width="275" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.227117703" green="0.227117703" blue="0.227117703" alpha="0.34999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Jyu-Ou-XwZ"/>
                                 </constraints>
@@ -57,7 +57,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <state key="normal" title="Valider">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="submitClicked:" destination="fEY-uC-M9p" eventType="touchUpInside" id="ChC-Ko-AfI"/>
@@ -66,21 +66,21 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Création de compte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dyk-DW-zhv">
                                 <rect key="frame" x="113" y="50" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLJ-WP-FfK">
-                                <rect key="frame" x="10" y="41" width="30" height="38"/>
+                                <rect key="frame" x="10" y="40.5" width="30" height="38"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <state key="normal" title="X">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="closeButtonClicked:" destination="fEY-uC-M9p" eventType="touchUpInside" id="1Ah-qC-HfK"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.61313288560000001" green="0.88143903349999997" blue="0.81466918300000002" alpha="0.75808005141780821" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.8082192708" green="0.94832645940000004" blue="0.91180661910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Nzv-jC-LiG" firstAttribute="centerX" secondItem="Odw-2l-uY5" secondAttribute="centerX" id="21v-UG-ofn"/>
                             <constraint firstItem="Dyk-DW-zhv" firstAttribute="centerX" secondItem="Odw-2l-uY5" secondAttribute="centerX" id="5W5-ny-PPf"/>

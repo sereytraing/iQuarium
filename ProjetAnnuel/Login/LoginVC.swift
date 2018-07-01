@@ -39,7 +39,7 @@ class LoginVC: DefaultVC {
             self.activityIndicator.startAnimating()
             self.requestLogin(username: username, password: password)
         } else {
-            self.okAlert(title: "Erreur", message: "insert_username_password".localized)
+            self.okAlert(title: "Erreur", message: "error_username_password".localized)
         }
     }
     

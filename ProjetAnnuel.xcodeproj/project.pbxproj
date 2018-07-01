@@ -25,6 +25,16 @@
 		0FB69373208CED1300CEED01 /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69372208CED1300CEED01 /* DefaultVC.swift */; };
 		0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69374208CEF9800CEED01 /* CreateAccountVC.swift */; };
 		0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */; };
+		0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06E320E92352008D7CBE /* ListAquariumVC.swift */; };
+		0FFC06E720E923B9008D7CBE /* ListAquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06E620E923B9008D7CBE /* ListAquarium.storyboard */; };
+		0FFC06E920E92417008D7CBE /* AquariumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06E820E92417008D7CBE /* AquariumListCell.xib */; };
+		0FFC06EB20E92465008D7CBE /* AquariumListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06EA20E92465008D7CBE /* AquariumListCell.swift */; };
+		0FFC06ED20E92642008D7CBE /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06EC20E92642008D7CBE /* UIColor.swift */; };
+		0FFC06F220E93428008D7CBE /* CreateFishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06F120E93428008D7CBE /* CreateFishVC.swift */; };
+		0FFC06F420E93431008D7CBE /* CreateFish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06F320E93431008D7CBE /* CreateFish.storyboard */; };
+		0FFC06F620E934A4008D7CBE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06F520E934A4008D7CBE /* Species.swift */; };
+		0FFC06F820E938DC008D7CBE /* ListFishesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06F720E938DC008D7CBE /* ListFishesVC.swift */; };
+		0FFC06FB20E938F7008D7CBE /* ListFishes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */; };
 		9E5428A205DB8B973EB863B2 /* Pods_ProjetAnnuel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +59,16 @@
 		0FB69372208CED1300CEED01 /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		0FB69374208CEF9800CEED01 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		0FFC06E320E92352008D7CBE /* ListAquariumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAquariumVC.swift; sourceTree = "<group>"; };
+		0FFC06E620E923B9008D7CBE /* ListAquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListAquarium.storyboard; sourceTree = "<group>"; };
+		0FFC06E820E92417008D7CBE /* AquariumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AquariumListCell.xib; sourceTree = "<group>"; };
+		0FFC06EA20E92465008D7CBE /* AquariumListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumListCell.swift; sourceTree = "<group>"; };
+		0FFC06EC20E92642008D7CBE /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		0FFC06F120E93428008D7CBE /* CreateFishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFishVC.swift; sourceTree = "<group>"; };
+		0FFC06F320E93431008D7CBE /* CreateFish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateFish.storyboard; sourceTree = "<group>"; };
+		0FFC06F520E934A4008D7CBE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		0FFC06F720E938DC008D7CBE /* ListFishesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFishesVC.swift; sourceTree = "<group>"; };
+		0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListFishes.storyboard; sourceTree = "<group>"; };
 		230312403EA7A80985C223E5 /* Pods-ProjetAnnuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.release.xcconfig"; sourceTree = "<group>"; };
 		4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetAnnuel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFD5A073C466997E53E9752 /* Pods-ProjetAnnuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +101,7 @@
 				0F7BABAD20E620D5003F72DB /* User.swift */,
 				0F7BABB520E63351003F72DB /* Fish.swift */,
 				0F7BABB720E6335A003F72DB /* Aquarium.swift */,
+				0FFC06F520E934A4008D7CBE /* Species.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -89,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				0F7BABB120E623ED003F72DB /* String.swift */,
+				0FFC06EC20E92642008D7CBE /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -141,7 +163,10 @@
 				0FB6936F208CEC8400CEED01 /* Login */,
 				0FB69376208CEFA400CEED01 /* CreateAccount */,
 				0F7BABBB20E638D1003F72DB /* CreateAquarium */,
+				0FFC06F020E933FC008D7CBE /* CreateFish */,
 				0F2A38FC20D6848B00636EF3 /* Home */,
+				0FFC06E520E92379008D7CBE /* ListAquarium */,
+				0FFC06F920E938E2008D7CBE /* ListFishes */,
 				0F7BABA820E6102C003F72DB /* Model */,
 				0F7BABB320E6264C003F72DB /* Extension */,
 			);
@@ -164,6 +189,35 @@
 				0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		0FFC06E520E92379008D7CBE /* ListAquarium */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC06E320E92352008D7CBE /* ListAquariumVC.swift */,
+				0FFC06E620E923B9008D7CBE /* ListAquarium.storyboard */,
+				0FFC06EA20E92465008D7CBE /* AquariumListCell.swift */,
+				0FFC06E820E92417008D7CBE /* AquariumListCell.xib */,
+			);
+			path = ListAquarium;
+			sourceTree = "<group>";
+		};
+		0FFC06F020E933FC008D7CBE /* CreateFish */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC06F120E93428008D7CBE /* CreateFishVC.swift */,
+				0FFC06F320E93431008D7CBE /* CreateFish.storyboard */,
+			);
+			path = CreateFish;
+			sourceTree = "<group>";
+		};
+		0FFC06F920E938E2008D7CBE /* ListFishes */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC06F720E938DC008D7CBE /* ListFishesVC.swift */,
+				0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */,
+			);
+			path = ListFishes;
 			sourceTree = "<group>";
 		};
 		715F887BD554319B7351797E /* Pods */ = {
@@ -244,12 +298,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB69371208CEC9300CEED01 /* Login.storyboard in Resources */,
+				0FFC06E920E92417008D7CBE /* AquariumListCell.xib in Resources */,
+				0FFC06F420E93431008D7CBE /* CreateFish.storyboard in Resources */,
 				0F7BABBD20E638FA003F72DB /* CreateAquarium.storyboard in Resources */,
 				0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */,
 				0FB69364208CEB1500CEED01 /* LaunchScreen.storyboard in Resources */,
 				0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */,
 				0FB69361208CEB1500CEED01 /* Assets.xcassets in Resources */,
+				0FFC06FB20E938F7008D7CBE /* ListFishes.storyboard in Resources */,
 				0FB6935F208CEB1400CEED01 /* Main.storyboard in Resources */,
+				0FFC06E720E923B9008D7CBE /* ListAquarium.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,15 +362,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB69373208CED1300CEED01 /* DefaultVC.swift in Sources */,
+				0FFC06F820E938DC008D7CBE /* ListFishesVC.swift in Sources */,
+				0FFC06ED20E92642008D7CBE /* UIColor.swift in Sources */,
 				0FB6935A208CEB1400CEED01 /* AppDelegate.swift in Sources */,
+				0FFC06EB20E92465008D7CBE /* AquariumListCell.swift in Sources */,
+				0FFC06F620E934A4008D7CBE /* Species.swift in Sources */,
 				0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */,
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
+				0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
 				0F7BABBA20E638BD003F72DB /* CreateAquarium.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
 				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,
+				0FFC06F220E93428008D7CBE /* CreateFishVC.swift in Sources */,
 				0F7BABAE20E620D5003F72DB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,10 +15,14 @@ class CreateAquarium: DefaultVC {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var volumePickerView: UIPickerView!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var temperatureTextField: UITextField!
+    @IBOutlet weak var addFishButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     let volumeTabString = ["100 m³", "200 m³", "300 m³"]
     let volumeTabValue = [100, 200, 300]
     var select = 100
+    var fishes = [Fish]()
     
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
                                     "Authorization": SessionManager.GetInstance().getToken()!]
@@ -27,35 +31,75 @@ class CreateAquarium: DefaultVC {
         super.viewDidLoad()
         self.volumePickerView.delegate = self
         self.volumePickerView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.select = self.volumeTabValue.first!
+        self.submitButton.layer.cornerRadius = 25
+        self.submitButton.layer.borderWidth = 1
+        self.submitButton.layer.borderColor = UIColor.darkGray.cgColor
+        self.addFishButton.layer.cornerRadius = 25
+        self.addFishButton.layer.borderWidth = 1
+        self.addFishButton.layer.borderColor = UIColor.white.cgColor
+        self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
+        self.requestGetFishes()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
     }
     
 
     @IBAction func submitButtonClicked(_ sender: Any) {
-       // print(self.volumePickerView.sele)
-        print(self.select)
+        if let name = self.nameTextField.text, let temperature = self.temperatureTextField.text, !name.isEmpty && !temperature.isEmpty {
+            if let tempValue = Double(temperature) {
+                self.requestCreateAquarium(name: name, temperature: tempValue, volume: self.select)
+            } else {
+                self.okAlert(title: "Erreur", message: "error_name_temperature_aquarium_creation".localized)
+            }
+        } else {
+            self.okAlert(title: "Erreur", message: "error_name_temperature_aquarium_creation".localized)
+        }
     }
     
-    func requestCreateAquarium() {
-        let url = self.baseUrl + "/users/id/" + SessionManager.GetInstance().getId()!
-        Alamofire.request(url, method: .post, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<Aquarium>) in
+    func requestCreateAquarium(name: String, temperature: Double, volume: Int) {
+        let url = self.baseUrl + "/aquariums/"
+        let parameters = [
+            "name": name,
+            "temperature": temperature,
+            "volume": volume,
+            ] as [String : Any]
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<Aquarium>) in
             
             if response.response?.statusCode == 401 {
                 self.logOut()
             } else {
                 switch response.result {
                 case .success:
-                    if let aquarium = response.result.value {
-
+                    self.navigationController?.popViewController(animated: true)
+                case .failure:
+                    self.okAlert(title: "Erreur", message: "Erreur Create Aquarium \(String(describing: response.response?.statusCode))")
+                }
+            }
+        })
+    }
+    
+    func requestGetFishes() {
+        let url = self.baseUrl + "/fishes/"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseArray(completionHandler: { (response: DataResponse<[Fish]>) in
+            
+            if response.response?.statusCode == 401 {
+                self.logOut()
+            } else {
+                switch response.result {
+                case .success:
+                    if let fishes = response.result.value {
+                        self.fishes = fishes
+                        self.tableView.reloadData()
                     }
                     
                 case .failure:
-                    self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
+                    self.okAlert(title: "Erreur", message: "Erreur Get Fishes \(String(describing: response.response?.statusCode))")
                 }
             }
         })
@@ -77,5 +121,34 @@ extension CreateAquarium: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
        self.select = self.volumeTabValue[row]
+    }
+}
+
+extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.fishes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
+        if indexPath.row % 2 == 0 {
+            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
+        } else {
+            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
+        }
+        
+        cell.bindData(title: self.fishes[indexPath.row].name) //Peut ajouter imageurl
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
+         trackVC.item = allItems[indexPath.row]
+         navigationController?.pushViewController(trackVC, animated: true)*/
     }
 }

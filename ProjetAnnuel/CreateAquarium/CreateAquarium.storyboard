@@ -24,51 +24,120 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ket-Kc-5Io"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLi-TK-trF">
-                                <rect key="frame" x="0.0" y="101" width="375" height="216"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGp-bH-zxH">
-                                <rect key="frame" x="151" y="389" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Confirmer"/>
-                                <connections>
-                                    <action selector="submitButtonClicked:" destination="uhX-Zd-p7G" eventType="touchUpInside" id="jUZ-Oe-QUh"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Température voulue" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AHU-JB-1AD">
+                                <rect key="frame" x="56.5" y="111" width="262.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tlk-sd-FjF"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gCD-7D-SSG">
                                 <rect key="frame" x="57" y="80" width="262" height="1"/>
-                                <color key="backgroundColor" white="1" alpha="0.53407534246575339" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.77783946700507611" green="0.77783946700507611" blue="0.77783946700507611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="dOd-Fh-Xyn"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRe-Z7-nHx">
+                                <rect key="frame" x="56.5" y="151" width="262" height="1"/>
+                                <color key="backgroundColor" red="0.77783946699999995" green="0.77783946699999995" blue="0.77783946699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="XdW-ib-mQg"/>
+                                </constraints>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZLi-TK-trF">
+                                <rect key="frame" x="0.0" y="182" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="SbL-bR-RKP"/>
+                                </constraints>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oum-VN-04B">
+                                <rect key="frame" x="57" y="519" width="262.5" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IXV-eG-vVP"/>
+                                </constraints>
+                                <state key="normal" title="Confirmer">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="uhX-Zd-p7G" eventType="touchUpInside" id="8NT-Gt-Dl2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9T-VL-NkD">
+                                <rect key="frame" x="56.5" y="589" width="262.5" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IaJ-hP-Rjb"/>
+                                </constraints>
+                                <state key="normal" title="Ajouter un poisson">
+                                    <color key="titleColor" red="0.63954349529901244" green="0.75237858626953313" blue="0.73110929860992457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="own-9f-f87" kind="show" id="sgh-WK-Cok"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-AK-KeM">
+                                <rect key="frame" x="56.5" y="302" width="262.5" height="197"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.61313288560000001" green="0.88143903349999997" blue="0.81466918300000002" alpha="0.1971586045" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80821927080660239" green="0.94832645939086291" blue="0.91180661909244554" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="GRe-Z7-nHx" firstAttribute="width" secondItem="AHU-JB-1AD" secondAttribute="width" id="2KY-vF-Abz"/>
+                            <constraint firstItem="OPQ-cn-6ff" firstAttribute="bottom" secondItem="s9T-VL-NkD" secondAttribute="bottom" constant="28" id="3XB-JF-TZT"/>
                             <constraint firstItem="gCD-7D-SSG" firstAttribute="leading" secondItem="73i-c1-rUl" secondAttribute="leading" id="4Cy-TV-KE4"/>
+                            <constraint firstItem="oum-VN-04B" firstAttribute="top" secondItem="LlH-AK-KeM" secondAttribute="bottom" constant="20" id="5Z7-or-E7Q"/>
                             <constraint firstItem="73i-c1-rUl" firstAttribute="centerX" secondItem="qMF-jA-jjW" secondAttribute="centerX" id="ALA-Ed-pdL"/>
+                            <constraint firstItem="oum-VN-04B" firstAttribute="width" secondItem="AHU-JB-1AD" secondAttribute="width" id="DtS-aL-pKK"/>
+                            <constraint firstItem="GRe-Z7-nHx" firstAttribute="top" secondItem="AHU-JB-1AD" secondAttribute="bottom" id="GSk-6b-fRe"/>
                             <constraint firstItem="gCD-7D-SSG" firstAttribute="top" secondItem="73i-c1-rUl" secondAttribute="bottom" id="PIQ-N6-seV"/>
-                            <constraint firstItem="ZLi-TK-trF" firstAttribute="top" secondItem="gCD-7D-SSG" secondAttribute="bottom" constant="20" id="SBI-kb-kKM"/>
+                            <constraint firstItem="AHU-JB-1AD" firstAttribute="width" secondItem="73i-c1-rUl" secondAttribute="width" id="Roe-cN-TNQ"/>
+                            <constraint firstItem="AHU-JB-1AD" firstAttribute="centerX" secondItem="qMF-jA-jjW" secondAttribute="centerX" id="SUR-DU-AP4"/>
+                            <constraint firstItem="LlH-AK-KeM" firstAttribute="width" secondItem="73i-c1-rUl" secondAttribute="width" id="U1Z-GJ-Ks6"/>
+                            <constraint firstItem="AHU-JB-1AD" firstAttribute="top" secondItem="gCD-7D-SSG" secondAttribute="bottom" constant="30" id="Xbd-bM-xIz"/>
+                            <constraint firstItem="LlH-AK-KeM" firstAttribute="centerX" secondItem="qMF-jA-jjW" secondAttribute="centerX" id="a5d-3g-mFZ"/>
                             <constraint firstItem="ZLi-TK-trF" firstAttribute="leading" secondItem="OPQ-cn-6ff" secondAttribute="leading" id="bq4-0g-afR"/>
+                            <constraint firstItem="ZLi-TK-trF" firstAttribute="top" secondItem="GRe-Z7-nHx" secondAttribute="bottom" constant="30" id="fyX-d4-FF9"/>
                             <constraint firstItem="73i-c1-rUl" firstAttribute="top" secondItem="OPQ-cn-6ff" secondAttribute="top" constant="20" id="gyl-WE-mJp"/>
                             <constraint firstItem="ZLi-TK-trF" firstAttribute="trailing" secondItem="OPQ-cn-6ff" secondAttribute="trailing" id="kUu-65-67s"/>
+                            <constraint firstItem="s9T-VL-NkD" firstAttribute="width" secondItem="oum-VN-04B" secondAttribute="width" id="l2t-ok-Ay1"/>
+                            <constraint firstItem="LlH-AK-KeM" firstAttribute="top" secondItem="ZLi-TK-trF" secondAttribute="bottom" constant="20" id="lSa-Jv-LN7"/>
+                            <constraint firstItem="GRe-Z7-nHx" firstAttribute="leading" secondItem="AHU-JB-1AD" secondAttribute="leading" id="mkK-6g-2Xy"/>
+                            <constraint firstItem="s9T-VL-NkD" firstAttribute="top" secondItem="oum-VN-04B" secondAttribute="bottom" constant="20" id="qGL-w0-aZN"/>
+                            <constraint firstItem="oum-VN-04B" firstAttribute="centerX" secondItem="qMF-jA-jjW" secondAttribute="centerX" id="qPA-ea-axt"/>
+                            <constraint firstItem="s9T-VL-NkD" firstAttribute="centerX" secondItem="qMF-jA-jjW" secondAttribute="centerX" id="tmU-PN-dD6"/>
                             <constraint firstItem="73i-c1-rUl" firstAttribute="width" secondItem="qMF-jA-jjW" secondAttribute="width" multiplier="0.7" id="wng-YJ-3CO"/>
                             <constraint firstItem="gCD-7D-SSG" firstAttribute="width" secondItem="73i-c1-rUl" secondAttribute="width" id="yt9-qf-na0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OPQ-cn-6ff"/>
                     </view>
                     <connections>
-                        <outlet property="submitButton" destination="PGp-bH-zxH" id="1Ln-kg-e7q"/>
+                        <outlet property="addFishButton" destination="s9T-VL-NkD" id="yfD-jL-gKm"/>
+                        <outlet property="nameTextField" destination="73i-c1-rUl" id="gJG-PU-sGT"/>
+                        <outlet property="submitButton" destination="oum-VN-04B" id="3sC-fn-ZRl"/>
+                        <outlet property="tableView" destination="LlH-AK-KeM" id="jlV-tC-s6C"/>
+                        <outlet property="temperatureTextField" destination="AHU-JB-1AD" id="qdN-54-EXP"/>
                         <outlet property="volumePickerView" destination="ZLi-TK-trF" id="8hj-et-zNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRX-tW-aSK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-202" y="-128"/>
+        </scene>
+        <!--CreateFish-->
+        <scene sceneID="M0G-E3-hUf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CreateFish" id="own-9f-f87" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4kk-T6-t2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="-320"/>
         </scene>
     </scenes>
 </document>

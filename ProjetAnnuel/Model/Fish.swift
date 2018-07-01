@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Fish : Mappable{
     var name: String?
-    //var species: Specie?
+    var species: Species?
     var aquarium: Aquarium?
     var owner: User?
     var height: Double?
@@ -21,7 +21,7 @@ class Fish : Mappable{
     
     func mapping(map: Map) {
         name <- map["name"]
-        //species <- map["Species"]
+        species <- map["Species"]
         aquarium <- map["Aquarium"]
         owner <- map["Owner"]
         height <- map["height"]

@@ -11,7 +11,7 @@ import ObjectMapper
 
 class Aquarium : Mappable{
     var name: String?
-    var picture: [String]?
+    var pictures: [String]?
     var temperature: Double?
     var volume: Double?
     var isDirty: Bool?
@@ -24,7 +24,7 @@ class Aquarium : Mappable{
     
     func mapping(map: Map) {
         name <- map["name"]
-        picture <- map["picture"]
+        pictures <- map["pictures"]
         temperature <- map["temperature"]
         volume <- map["volume"]
         isDirty <- map["isDirty"]

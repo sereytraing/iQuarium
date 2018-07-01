@@ -22,7 +22,7 @@ class CreateAccountVC: DefaultVC {
         super.viewDidLoad()
         self.submitButton.layer.cornerRadius = 25
         self.submitButton.layer.borderWidth = 1
-        self.submitButton.layer.borderColor = UIColor.white.cgColor
+        self.submitButton.layer.borderColor = UIColor.darkGray.cgColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +33,7 @@ class CreateAccountVC: DefaultVC {
         if let username = self.usernameTextField.text, let password = self.passwordTextField.text, !username.isEmpty && !password.isEmpty {
             self.requestCreateAccount(username: self.usernameTextField.text!, password: self.passwordTextField.text!)
         } else {
-            self.okAlert(title: "Erreur", message: "insert_username".localized)
+            self.okAlert(title: "Erreur", message: "error_username_password".localized)
         }
     }
     

@@ -23,8 +23,11 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.requestGetProfile()
         self.scrollView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.requestGetProfile()
     }
 
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pla-Dt-gDS">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create FishVC-->
+        <scene sceneID="wSk-BU-EyZ">
+            <objects>
+                <viewController id="pla-Dt-gDS" customClass="CreateFishVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XMs-s1-fBn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-Zt-yI9">
+                                <rect key="frame" x="163" y="70" width="49.5" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo2-SQ-zuT">
+                                <rect key="frame" x="56" y="386" width="262.5" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="lT0-AG-5Pm"/>
+                                </constraints>
+                                <state key="normal" title="Confirmer">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonClicked:" destination="pla-Dt-gDS" eventType="touchUpInside" id="fHm-AD-fqZ"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULS-bw-5iw">
+                                <rect key="frame" x="0.0" y="120" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.8082192708" green="0.94832645940000004" blue="0.91180661910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dkl-Zt-yI9" firstAttribute="top" secondItem="SNe-vw-uJv" secondAttribute="top" constant="50" id="7B6-P3-Uxz"/>
+                            <constraint firstItem="Zo2-SQ-zuT" firstAttribute="top" secondItem="ULS-bw-5iw" secondAttribute="bottom" constant="50" id="7eR-9S-ThA"/>
+                            <constraint firstItem="Zo2-SQ-zuT" firstAttribute="width" secondItem="XMs-s1-fBn" secondAttribute="width" multiplier="0.7" id="CZ1-ed-DHQ"/>
+                            <constraint firstItem="Zo2-SQ-zuT" firstAttribute="centerX" secondItem="XMs-s1-fBn" secondAttribute="centerX" id="EIw-pD-lMb"/>
+                            <constraint firstItem="Dkl-Zt-yI9" firstAttribute="centerX" secondItem="XMs-s1-fBn" secondAttribute="centerX" id="VTy-iQ-JnW"/>
+                            <constraint firstAttribute="trailing" secondItem="ULS-bw-5iw" secondAttribute="trailing" id="Vg5-wK-ctz"/>
+                            <constraint firstItem="ULS-bw-5iw" firstAttribute="top" secondItem="Dkl-Zt-yI9" secondAttribute="bottom" constant="20" id="cbc-CD-wbL"/>
+                            <constraint firstItem="ULS-bw-5iw" firstAttribute="leading" secondItem="SNe-vw-uJv" secondAttribute="leading" id="mfy-XV-0HO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SNe-vw-uJv"/>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="Dkl-Zt-yI9" id="a4M-yT-2xt"/>
+                        <outlet property="pickerView" destination="ULS-bw-5iw" id="dcC-jI-mki"/>
+                        <outlet property="submitButton" destination="Zo2-SQ-zuT" id="1bA-EM-ZGb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFD-SB-r5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="-29"/>
+        </scene>
+    </scenes>
+</document>

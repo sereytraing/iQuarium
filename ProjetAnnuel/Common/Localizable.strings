@@ -6,4 +6,5 @@
   Copyright © 2018 AlkRox. All rights reserved.
 */
 
-"error_login_password" = "Entrez un nom d'utilisateur et un mot de passe";
+"error_username_password" = "Entrez un nom d'utilisateur et un mot de passe";
+"error_name_temperature_aquarium_creation" = "Entrez un nom et une température";
