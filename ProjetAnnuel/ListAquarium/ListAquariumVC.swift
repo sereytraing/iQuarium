@@ -122,8 +122,9 @@ extension ListAquariumVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
-        trackVC.item = allItems[indexPath.row]
-        navigationController?.pushViewController(trackVC, animated: true)*/
+        let storyboard = UIStoryboard(name: "DetailAquarium", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "DetailAquariumVC") as? DetailAquariumVC {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }

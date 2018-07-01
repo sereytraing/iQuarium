@@ -126,8 +126,9 @@ extension ListFishesVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
-         trackVC.item = allItems[indexPath.row]
-         navigationController?.pushViewController(trackVC, animated: true)*/
+        let storyboard = UIStoryboard(name: "DetailFish", bundle: nil)
+        if let controller = storyboard.instantiateViewController(withIdentifier: "DetailFishVC") as? DetailFishVC {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
     }
 }
