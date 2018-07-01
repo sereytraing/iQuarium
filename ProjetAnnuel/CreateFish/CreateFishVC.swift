@@ -16,6 +16,9 @@ class CreateFishVC: DefaultVC {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     
+    //Aquarium
+    //Taille : double
+    
     var species = [Species]()
     var select = ""
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
@@ -30,7 +33,6 @@ class CreateFishVC: DefaultVC {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func requestCreateFish(name: String, speciesId: String) {

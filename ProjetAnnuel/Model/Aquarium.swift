@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class Aquarium : Mappable{
+    var id: String?
     var name: String?
     var pictures: [String]?
     var temperature: Double?
@@ -23,6 +24,7 @@ class Aquarium : Mappable{
     }
     
     func mapping(map: Map) {
+        id <- map["_id"]
         name <- map["name"]
         pictures <- map["pictures"]
         temperature <- map["temperature"]

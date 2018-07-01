@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class ListFishesVC: DefaultVC {
+class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addButton: UIButton!
@@ -25,6 +25,10 @@ class ListFishesVC: DefaultVC {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self
+        self.tableView.addGestureRecognizer(longPressGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +43,6 @@ class ListFishesVC: DefaultVC {
     func requestGetAllFishes() {
         let url = self.baseUrl + "/fishes/"
         Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseArray(completionHandler: { (response: DataResponse<[Fish]>) in
-            
             if response.response?.statusCode == 401 {
                 self.logOut()
             } else {
@@ -52,7 +55,8 @@ class ListFishesVC: DefaultVC {
                     
                 case .failure:
                     if response.response?.statusCode == 204 {
-                        self.okAlert(title: "Aucun contenu", message: "Veuillez ajouter un poisson")
+                        self.fishes = []
+                        self.tableView.reloadData()
                     } else {
                         self.okAlert(title: "Erreur", message: "Erreur Get Fishes \(String(describing: response.response?.statusCode))")
                     }
@@ -62,6 +66,41 @@ class ListFishesVC: DefaultVC {
         })
     }
 
+    func requestRemoveFish(id: String) {
+        let url = self.baseUrl + "/fishes/" + id
+        Alamofire.request(url, method: .delete, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<User>) in
+            if response.response?.statusCode == 401 {
+                self.logOut()
+            } else {
+                switch response.result {
+                case .success:
+                    self.requestGetAllFishes()
+                case .failure:
+                    self.okAlert(title: "Erreur", message: "Erreur Remove Fish \(String(describing: response.response?.statusCode))")
+                }
+            }
+        })
+    }
+    
+    func askDeleteFish(index: Int) {
+        let alert = UIAlertController(title: "Attention", message: "Voulez-vous supprimer le poisson ?", preferredStyle: UIAlertControllerStyle.alert)
+        let yesAction = UIAlertAction(title: "Oui", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            self.requestRemoveFish(id: self.fishes[index].id!)
+        }
+        alert.addAction(yesAction)
+        alert.addAction(UIAlertAction(title: "Non", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        if gestureRecognizer.state == .ended {
+            let touchPoint = gestureRecognizer.location(in: self.tableView)
+            if let indexPath = self.tableView.indexPathForRow(at: touchPoint) {
+                self.askDeleteFish(index: indexPath.row)
+            }
+        }
+    }
 }
 
 extension ListFishesVC: UITableViewDelegate, UITableViewDataSource {

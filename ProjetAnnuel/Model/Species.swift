@@ -17,8 +17,8 @@ class Species : Mappable{
     var zone: [String]?
     var phMin: Double?
     var phMax: Double?
-    var temperatureMin: Double?
-    var temperatureMax: Double?
+    var tempMin: Double?
+    var tempMax: Double?
     var diet: String?
     var pictures: [String]?
     var id: String?
@@ -35,8 +35,8 @@ class Species : Mappable{
         zone <- map["zone"]
         phMin <- map["PHMin"]
         phMax <- map["PHMax"]
-        temperatureMin <- map["temperatureMin"]
-        temperatureMax <- map["temperatureMax"]
+        tempMin <- map["tempMin"]
+        tempMax <- map["tempMax"]
         diet <- map["diet"]
         pictures <- map["pictures"]
     }

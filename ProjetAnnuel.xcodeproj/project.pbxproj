@@ -35,6 +35,8 @@
 		0FFC06F620E934A4008D7CBE /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06F520E934A4008D7CBE /* Species.swift */; };
 		0FFC06F820E938DC008D7CBE /* ListFishesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06F720E938DC008D7CBE /* ListFishesVC.swift */; };
 		0FFC06FB20E938F7008D7CBE /* ListFishes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */; };
+		0FFC06FD20E94C88008D7CBE /* DetailAquariumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06FC20E94C88008D7CBE /* DetailAquariumVC.swift */; };
+		0FFC070020E94CAE008D7CBE /* DetailFishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06FF20E94CAE008D7CBE /* DetailFishVC.swift */; };
 		9E5428A205DB8B973EB863B2 /* Pods_ProjetAnnuel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		0FFC06F520E934A4008D7CBE /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		0FFC06F720E938DC008D7CBE /* ListFishesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFishesVC.swift; sourceTree = "<group>"; };
 		0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListFishes.storyboard; sourceTree = "<group>"; };
+		0FFC06FC20E94C88008D7CBE /* DetailAquariumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAquariumVC.swift; sourceTree = "<group>"; };
+		0FFC06FF20E94CAE008D7CBE /* DetailFishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFishVC.swift; sourceTree = "<group>"; };
 		230312403EA7A80985C223E5 /* Pods-ProjetAnnuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.release.xcconfig"; sourceTree = "<group>"; };
 		4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetAnnuel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFD5A073C466997E53E9752 /* Pods-ProjetAnnuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				0FFC06F920E938E2008D7CBE /* ListFishes */,
 				0F7BABA820E6102C003F72DB /* Model */,
 				0F7BABB320E6264C003F72DB /* Extension */,
+				0FFC06FE20E94C93008D7CBE /* DetailAquarium */,
+				0FFC070120E94CB5008D7CBE /* DetailFish */,
 			);
 			path = ProjetAnnuel;
 			sourceTree = "<group>";
@@ -218,6 +224,22 @@
 				0FFC06FA20E938F7008D7CBE /* ListFishes.storyboard */,
 			);
 			path = ListFishes;
+			sourceTree = "<group>";
+		};
+		0FFC06FE20E94C93008D7CBE /* DetailAquarium */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC06FC20E94C88008D7CBE /* DetailAquariumVC.swift */,
+			);
+			path = DetailAquarium;
+			sourceTree = "<group>";
+		};
+		0FFC070120E94CB5008D7CBE /* DetailFish */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC06FF20E94CAE008D7CBE /* DetailFishVC.swift */,
+			);
+			path = DetailFish;
 			sourceTree = "<group>";
 		};
 		715F887BD554319B7351797E /* Pods */ = {
@@ -368,11 +390,13 @@
 				0FFC06EB20E92465008D7CBE /* AquariumListCell.swift in Sources */,
 				0FFC06F620E934A4008D7CBE /* Species.swift in Sources */,
 				0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */,
+				0FFC070020E94CAE008D7CBE /* DetailFishVC.swift in Sources */,
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
 				0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
 				0F7BABBA20E638BD003F72DB /* CreateAquarium.swift in Sources */,
+				0FFC06FD20E94C88008D7CBE /* DetailAquariumVC.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
 				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,

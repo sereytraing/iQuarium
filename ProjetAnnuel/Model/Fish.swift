@@ -15,11 +15,13 @@ class Fish : Mappable{
     var aquarium: Aquarium?
     var owner: User?
     var height: Double?
+    var id: String?
     
     required init?(map: Map){
     }
     
     func mapping(map: Map) {
+        id <- map["_id"]
         name <- map["name"]
         species <- map["Species"]
         aquarium <- map["Aquarium"]
