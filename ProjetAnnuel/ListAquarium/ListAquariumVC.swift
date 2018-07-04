@@ -124,6 +124,7 @@ extension ListAquariumVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailAquarium", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailAquariumVC") as? DetailAquariumVC {
+            controller.aquarium = self.aquariums[indexPath.row]
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }

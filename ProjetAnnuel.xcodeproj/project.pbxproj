@@ -39,6 +39,8 @@
 		0FFC070020E94CAE008D7CBE /* DetailFishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06FF20E94CAE008D7CBE /* DetailFishVC.swift */; };
 		0FFC070320E94D39008D7CBE /* DetailAquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC070220E94D39008D7CBE /* DetailAquarium.storyboard */; };
 		0FFC070520E94D45008D7CBE /* DetailFish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC070420E94D45008D7CBE /* DetailFish.storyboard */; };
+		0FFC070720ED4CF1008D7CBE /* SimpleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC070620ED4CF1008D7CBE /* SimpleCell.swift */; };
+		0FFC070920ED4CFC008D7CBE /* SimpleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC070820ED4CFC008D7CBE /* SimpleCell.xib */; };
 		9E5428A205DB8B973EB863B2 /* Pods_ProjetAnnuel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		0FFC06FF20E94CAE008D7CBE /* DetailFishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailFishVC.swift; sourceTree = "<group>"; };
 		0FFC070220E94D39008D7CBE /* DetailAquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailAquarium.storyboard; sourceTree = "<group>"; };
 		0FFC070420E94D45008D7CBE /* DetailFish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailFish.storyboard; sourceTree = "<group>"; };
+		0FFC070620ED4CF1008D7CBE /* SimpleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCell.swift; sourceTree = "<group>"; };
+		0FFC070820ED4CFC008D7CBE /* SimpleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleCell.xib; sourceTree = "<group>"; };
 		230312403EA7A80985C223E5 /* Pods-ProjetAnnuel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.release.xcconfig"; sourceTree = "<group>"; };
 		4244BE9500A3C33AF78F56DA /* Pods_ProjetAnnuel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetAnnuel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CFD5A073C466997E53E9752 /* Pods-ProjetAnnuel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetAnnuel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjetAnnuel/Pods-ProjetAnnuel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				0FB69372208CED1300CEED01 /* DefaultVC.swift */,
 				0F7BABAB20E61F00003F72DB /* SessionManager.swift */,
 				0F7BABAF20E623D5003F72DB /* Localizable.strings */,
+				0FFC070620ED4CF1008D7CBE /* SimpleCell.swift */,
+				0FFC070820ED4CFC008D7CBE /* SimpleCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				0FFC070320E94D39008D7CBE /* DetailAquarium.storyboard in Resources */,
 				0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */,
 				0FB69364208CEB1500CEED01 /* LaunchScreen.storyboard in Resources */,
+				0FFC070920ED4CFC008D7CBE /* SimpleCell.xib in Resources */,
 				0FFC070520E94D45008D7CBE /* DetailFish.storyboard in Resources */,
 				0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */,
 				0FB69361208CEB1500CEED01 /* Assets.xcassets in Resources */,
@@ -400,6 +407,7 @@
 				0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */,
 				0FFC070020E94CAE008D7CBE /* DetailFishVC.swift in Sources */,
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
+				0FFC070720ED4CF1008D7CBE /* SimpleCell.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
 				0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,

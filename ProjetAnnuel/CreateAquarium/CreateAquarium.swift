@@ -40,7 +40,7 @@ class CreateAquarium: DefaultVC {
         self.addFishButton.layer.cornerRadius = 25
         self.addFishButton.layer.borderWidth = 1
         self.addFishButton.layer.borderColor = UIColor.white.cgColor
-        self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
+        self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
         self.requestGetFishes()
     }
 
@@ -130,7 +130,7 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
         if indexPath.row % 2 == 0 {
             cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
         } else {
@@ -147,8 +147,6 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let trackVC = TrackVC(nibName: TrackVC.className(), bundle: nil)
-         trackVC.item = allItems[indexPath.row]
-         navigationController?.pushViewController(trackVC, animated: true)*/
+
     }
 }
