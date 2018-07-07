@@ -23,6 +23,7 @@ class CreateAquarium: DefaultVC {
     let volumeTabValue = [100, 200, 300]
     var select = 100
     var fishes = [Fish]()
+    var selectedIndexes = [Int]()
     
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
                                     "Authorization": SessionManager.GetInstance().getToken()!]
@@ -33,6 +34,7 @@ class CreateAquarium: DefaultVC {
         self.volumePickerView.dataSource = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.allowsMultipleSelection = true
         self.select = self.volumeTabValue.first!
         self.submitButton.layer.cornerRadius = 25
         self.submitButton.layer.borderWidth = 1
@@ -52,7 +54,12 @@ class CreateAquarium: DefaultVC {
     @IBAction func submitButtonClicked(_ sender: Any) {
         if let name = self.nameTextField.text, let temperature = self.temperatureTextField.text, !name.isEmpty && !temperature.isEmpty {
             if let tempValue = Double(temperature) {
-                self.requestCreateAquarium(name: name, temperature: tempValue, volume: self.select)
+                if !self.selectedIndexes.isEmpty {
+                    
+                }
+                
+                //self.requestCreateAquarium(name: name, temperature: tempValue, volume: self.select)
+                
             } else {
                 self.okAlert(title: "Erreur", message: "error_name_temperature_aquarium_creation".localized)
             }
@@ -147,6 +154,18 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if !self.selectedIndexes.contains(indexPath.row) {
+            self.selectedIndexes.append(indexPath.row)
+        }
+        print(self.selectedIndexes)
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        if self.selectedIndexes.contains(indexPath.row) {
+            if let index = self.selectedIndexes.index(of: indexPath.row) {
+                self.selectedIndexes.remove(at: index)
+            }
+        }
+        print(self.selectedIndexes)
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class DetailFishVC: DefaultVC {
 
+    var fish: Fish?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
