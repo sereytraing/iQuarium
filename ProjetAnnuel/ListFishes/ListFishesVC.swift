@@ -128,6 +128,7 @@ extension ListFishesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailFish", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailFishVC") as? DetailFishVC {
+            controller.fish = self.fishes[indexPath.row]
             self.navigationController?.pushViewController(controller, animated: true)
         }
     }

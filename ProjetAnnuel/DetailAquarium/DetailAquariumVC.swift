@@ -10,6 +10,7 @@ import UIKit
 
 class DetailAquariumVC: DefaultVC {
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!

@@ -176,6 +176,7 @@
                         <viewLayoutGuide key="safeArea" id="ph3-gI-aer"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="0os-gU-lNu" id="Ptu-DL-MdJ"/>
                         <outlet property="isDirtyLabel" destination="ciH-F7-cfJ" id="uak-5I-ozX"/>
                         <outlet property="nameLabel" destination="4rT-Mv-Og9" id="JCd-c2-qam"/>
                         <outlet property="tableView" destination="fD5-u4-ZKF" id="vim-Xe-Txf"/>

@@ -312,13 +312,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Pam-R8-cny" firstAttribute="leading" secondItem="4jg-mV-rud" secondAttribute="leading" id="1tb-sl-aNc"/>
-                            <constraint firstItem="4jg-mV-rud" firstAttribute="bottom" secondItem="Pam-R8-cny" secondAttribute="bottom" id="4DP-WJ-Ys2"/>
+                            <constraint firstAttribute="bottom" secondItem="Pam-R8-cny" secondAttribute="bottom" id="4DP-WJ-Ys2"/>
                             <constraint firstItem="4jg-mV-rud" firstAttribute="trailing" secondItem="Pam-R8-cny" secondAttribute="trailing" id="Au8-aN-6sJ"/>
                             <constraint firstItem="hHz-H3-KfH" firstAttribute="leading" secondItem="4jg-mV-rud" secondAttribute="leading" id="CfH-Hr-SNE"/>
                             <constraint firstItem="Pam-R8-cny" firstAttribute="top" secondItem="4jg-mV-rud" secondAttribute="top" id="THa-UA-3Xf"/>
                             <constraint firstItem="4jg-mV-rud" firstAttribute="trailing" secondItem="hHz-H3-KfH" secondAttribute="trailing" id="bj1-Ce-I8C"/>
                             <constraint firstItem="hHz-H3-KfH" firstAttribute="top" secondItem="4jg-mV-rud" secondAttribute="top" id="cZY-65-jy9"/>
-                            <constraint firstItem="4jg-mV-rud" firstAttribute="bottom" secondItem="hHz-H3-KfH" secondAttribute="bottom" id="gXm-PP-KP6"/>
+                            <constraint firstAttribute="bottom" secondItem="hHz-H3-KfH" secondAttribute="bottom" id="gXm-PP-KP6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4jg-mV-rud"/>
                     </view>
@@ -337,10 +337,10 @@
             </objects>
             <point key="canvasLocation" x="372" y="-771.8140929535233"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--iQuarium-->
         <scene sceneID="7b6-zH-aMh">
             <objects>
-                <navigationController storyboardIdentifier="Home" id="9pY-pe-YGy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Home" title="iQuarium" id="9pY-pe-YGy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eCy-qZ-ipa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -25,6 +25,7 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "iQuarium"
         self.scrollView.delegate = self
         self.mesPoissonsView.layer.masksToBounds = true
         self.mesAquariumsView.layer.masksToBounds = true
