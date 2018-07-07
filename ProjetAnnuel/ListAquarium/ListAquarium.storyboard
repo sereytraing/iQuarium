@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tsi-Vl-vSn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tsi-Vl-vSn">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz3-rg-K1p">
-                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.8082192708" green="0.94832645940000004" blue="0.91180661910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="VJN-V2-Hvq"/>
-                                    <constraint firstAttribute="width" constant="50" id="ny2-D6-pDe"/>
+                                    <constraint firstAttribute="height" constant="60" id="VJN-V2-Hvq"/>
+                                    <constraint firstAttribute="width" constant="60" id="ny2-D6-pDe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="+">
@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.94432414460000003" green="0.97994783890000003" blue="0.97091873230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tsi-Vl-vSn" firstAttribute="top" secondItem="w7i-4v-VpM" secondAttribute="top" id="8Mk-V8-IgO"/>
                             <constraint firstItem="Gz3-rg-K1p" firstAttribute="trailing" secondItem="w7i-4v-VpM" secondAttribute="trailing" constant="-20" id="KDD-V3-IVx"/>

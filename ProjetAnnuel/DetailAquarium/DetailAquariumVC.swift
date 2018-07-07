@@ -33,8 +33,8 @@ class DetailAquariumVC: DefaultVC {
     func bindData() {
         if let aquarium = aquarium {
             self.nameLabel.text = aquarium.name
-            self.temperatureLabel.text = "\(String(describing: aquarium.temperature))"
-            self.volumeLabel.text = "\(String(describing: aquarium.volume))"
+            self.temperatureLabel.text = "\(String(describing: aquarium.temperature!))°C"
+            self.volumeLabel.text = "\(String(describing: aquarium.volume!)) m³"
             self.isDirtyLabel.text = "\(String(describing: aquarium.isDirty))"
         }
     }

@@ -21,7 +21,7 @@ class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.addButton.layer.cornerRadius = 25.0
+        self.addButton.layer.cornerRadius = 30.0
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
@@ -111,9 +111,9 @@ extension ListFishesVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
         if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
+            cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
         } else {
-            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
+            cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         }
         
         cell.bindData(title: self.fishes[indexPath.row].name) //Peut ajouter imageurl

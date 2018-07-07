@@ -17,6 +17,8 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var noAquariumView: UIView!
     @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var mesAquariumsView: UIView!
+    @IBOutlet weak var mesPoissonsView: UIView!
     
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
                                     "Authorization": SessionManager.GetInstance().getToken()!]
@@ -24,6 +26,10 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.delegate = self
+        self.mesPoissonsView.layer.masksToBounds = true
+        self.mesAquariumsView.layer.masksToBounds = true
+        self.mesPoissonsView.layer.cornerRadius = 20.0
+        self.mesAquariumsView.layer.cornerRadius = 20.0
     }
     
     override func viewWillAppear(_ animated: Bool) {

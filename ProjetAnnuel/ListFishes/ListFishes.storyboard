@@ -23,11 +23,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dOZ-VK-rVq">
-                                <rect key="frame" x="305" y="597" width="50" height="50"/>
+                                <rect key="frame" x="295" y="587" width="60" height="60"/>
                                 <color key="backgroundColor" red="0.8082192708" green="0.94832645940000004" blue="0.91180661910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="iu6-gM-S4h"/>
-                                    <constraint firstAttribute="height" constant="50" id="p5g-Xd-7Ma"/>
+                                    <constraint firstAttribute="width" constant="60" id="iu6-gM-S4h"/>
+                                    <constraint firstAttribute="height" constant="60" id="p5g-Xd-7Ma"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <state key="normal" title="+">
