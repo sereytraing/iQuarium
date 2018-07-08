@@ -132,6 +132,9 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bg-0H-ILn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="375.5" height="50"/>
+                                                                <connections>
+                                                                    <action selector="feedFishClicked:" destination="vEp-y2-fvz" eventType="touchUpInside" id="VAi-3t-XOn"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.84754254129999995" green="0.91164535049999995" blue="0.92028334020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -327,10 +330,13 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="homeView" destination="Pam-R8-cny" id="nXL-gQ-04j"/>
+                        <outlet property="isDirtyLabel" destination="k5v-NR-fTY" id="UUi-Jd-w1Q"/>
                         <outlet property="mesAquariumsView" destination="s0N-6I-nlK" id="v0e-l6-XE9"/>
                         <outlet property="mesPoissonsView" destination="9ZV-Wx-t85" id="P4Y-av-Rv5"/>
+                        <outlet property="nameAquarium" destination="ROr-jp-bL0" id="htC-bU-545"/>
                         <outlet property="noAquariumView" destination="hHz-H3-KfH" id="qcA-TA-aGL"/>
                         <outlet property="scrollView" destination="3TY-B7-FXE" id="ait-ae-Hh0"/>
+                        <outlet property="temperatureLabel" destination="Dcr-jS-NUp" id="kLF-ca-04S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DtA-qy-0rC" userLabel="First Responder" sceneMemberID="firstResponder"/>

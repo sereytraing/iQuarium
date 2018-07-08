@@ -25,6 +25,9 @@
 		0FB69373208CED1300CEED01 /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69372208CED1300CEED01 /* DefaultVC.swift */; };
 		0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB69374208CEF9800CEED01 /* CreateAccountVC.swift */; };
 		0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */; };
+		0FB91FE620F294B700604DCD /* UpdateFishVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB91FE520F294B700604DCD /* UpdateFishVC.swift */; };
+		0FE8129D20F23EE1000E5F64 /* FoodConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE8129C20F23EE1000E5F64 /* FoodConfiguration.swift */; };
+		0FE812A120F288C5000E5F64 /* UpdateFishInAquariumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FE812A020F288C5000E5F64 /* UpdateFishInAquariumVC.swift */; };
 		0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FFC06E320E92352008D7CBE /* ListAquariumVC.swift */; };
 		0FFC06E720E923B9008D7CBE /* ListAquarium.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06E620E923B9008D7CBE /* ListAquarium.storyboard */; };
 		0FFC06E920E92417008D7CBE /* AquariumListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FFC06E820E92417008D7CBE /* AquariumListCell.xib */; };
@@ -65,6 +68,9 @@
 		0FB69372208CED1300CEED01 /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		0FB69374208CEF9800CEED01 /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		0FB91FE520F294B700604DCD /* UpdateFishVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFishVC.swift; sourceTree = "<group>"; };
+		0FE8129C20F23EE1000E5F64 /* FoodConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodConfiguration.swift; sourceTree = "<group>"; };
+		0FE812A020F288C5000E5F64 /* UpdateFishInAquariumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateFishInAquariumVC.swift; sourceTree = "<group>"; };
 		0FFC06E320E92352008D7CBE /* ListAquariumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAquariumVC.swift; sourceTree = "<group>"; };
 		0FFC06E620E923B9008D7CBE /* ListAquarium.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ListAquarium.storyboard; sourceTree = "<group>"; };
 		0FFC06E820E92417008D7CBE /* AquariumListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AquariumListCell.xib; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				0F7BABB520E63351003F72DB /* Fish.swift */,
 				0F7BABB720E6335A003F72DB /* Aquarium.swift */,
 				0FFC06F520E934A4008D7CBE /* Species.swift */,
+				0FE8129C20F23EE1000E5F64 /* FoodConfiguration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +192,7 @@
 				0F7BABB320E6264C003F72DB /* Extension */,
 				0FFC06FE20E94C93008D7CBE /* DetailAquarium */,
 				0FFC070120E94CB5008D7CBE /* DetailFish */,
+				0FB91FE720F295C800604DCD /* UpdateFishVC */,
 			);
 			path = ProjetAnnuel;
 			sourceTree = "<group>";
@@ -205,6 +213,14 @@
 				0FB69377208CEFC100CEED01 /* CreateAccount.storyboard */,
 			);
 			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		0FB91FE720F295C800604DCD /* UpdateFishVC */ = {
+			isa = PBXGroup;
+			children = (
+				0FB91FE520F294B700604DCD /* UpdateFishVC.swift */,
+			);
+			path = UpdateFishVC;
 			sourceTree = "<group>";
 		};
 		0FFC06E520E92379008D7CBE /* ListAquarium */ = {
@@ -240,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				0FFC06FC20E94C88008D7CBE /* DetailAquariumVC.swift */,
+				0FE812A020F288C5000E5F64 /* UpdateFishInAquariumVC.swift */,
 				0FFC070220E94D39008D7CBE /* DetailAquarium.storyboard */,
 			);
 			path = DetailAquarium;
@@ -402,12 +419,14 @@
 				0FFC06F820E938DC008D7CBE /* ListFishesVC.swift in Sources */,
 				0FFC06ED20E92642008D7CBE /* UIColor.swift in Sources */,
 				0FB6935A208CEB1400CEED01 /* AppDelegate.swift in Sources */,
+				0FE8129D20F23EE1000E5F64 /* FoodConfiguration.swift in Sources */,
 				0FFC06EB20E92465008D7CBE /* AquariumListCell.swift in Sources */,
 				0FFC06F620E934A4008D7CBE /* Species.swift in Sources */,
 				0F7BABB820E6335A003F72DB /* Aquarium.swift in Sources */,
 				0FFC070020E94CAE008D7CBE /* DetailFishVC.swift in Sources */,
 				0FB6936C208CEC2200CEED01 /* HomeVC.swift in Sources */,
 				0FFC070720ED4CF1008D7CBE /* SimpleCell.swift in Sources */,
+				0FE812A120F288C5000E5F64 /* UpdateFishInAquariumVC.swift in Sources */,
 				0FB69375208CEF9800CEED01 /* CreateAccountVC.swift in Sources */,
 				0FFC06E420E92352008D7CBE /* ListAquariumVC.swift in Sources */,
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
@@ -415,6 +434,7 @@
 				0FFC06FD20E94C88008D7CBE /* DetailAquariumVC.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
+				0FB91FE620F294B700604DCD /* UpdateFishVC.swift in Sources */,
 				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,
 				0FFC06F220E93428008D7CBE /* CreateFishVC.swift in Sources */,
 				0F7BABAE20E620D5003F72DB /* User.swift in Sources */,

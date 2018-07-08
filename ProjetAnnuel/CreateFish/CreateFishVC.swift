@@ -15,10 +15,13 @@ class CreateFishVC: DefaultVC {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var sizeTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     //Aquarium
     //Taille : double
-    
+    var aquariums = [Aquarium]()
+    var selectedAquarium: Aquarium?
     var species = [Species]()
     var select = ""
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
@@ -29,17 +32,23 @@ class CreateFishVC: DefaultVC {
         self.requestGetAllSpecies()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
+        self.requestGetAquariums()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    func requestCreateFish(name: String, speciesId: String) {
+    func requestCreateFish(name: String, speciesId: String, size: Double, idAquarium: String?) {
         let url = self.baseUrl + "/fishes/"
         let parameters = [
             "name": name,
-            "Species": speciesId
+            "Species": speciesId,
+            "height": size,
+            "Aquarium": idAquarium
             ] as [String : Any]
         
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<Fish>) in
@@ -49,7 +58,12 @@ class CreateFishVC: DefaultVC {
             } else {
                 switch response.result {
                 case .success:
-                    self.navigationController?.popViewController(animated: true)
+                    let alert = UIAlertController(title: "Succès", message: "Création d'un poisson réussie", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
+                        self.navigationController?.popViewController(animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                    
                 case .failure:
                     self.okAlert(title: "Erreur", message: "Erreur Create Fish \(String(describing: response.response?.statusCode))")
                 }
@@ -84,11 +98,32 @@ class CreateFishVC: DefaultVC {
         })
     }
     
+    func requestGetAquariums() {
+        let url = self.baseUrl + "/aquariums/"
+        Alamofire.request(url, method: .get, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseArray(completionHandler: { (response: DataResponse<[Aquarium]>) in
+            
+            if response.response?.statusCode == 401 {
+                self.logOut()
+            } else {
+                switch response.result {
+                case .success:
+                    if let aquariums = response.result.value {
+                        self.aquariums = aquariums
+                        self.tableView.reloadData()
+                    }
+                    
+                case .failure:
+                    self.okAlert(title: "Erreur", message: "Erreur Get Aquariums \(String(describing: response.response?.statusCode))")
+                }
+            }
+        })
+    }
+    
     @IBAction func submitButtonClicked(_ sender: Any) {
-        if (self.nameTextField.text?.isEmpty)! {
-            self.okAlert(title: "Erreur", message: "Entrez un nom")
+        if (self.nameTextField.text?.isEmpty)! && (self.sizeTextField.text?.isEmpty)! {
+            self.okAlert(title: "Erreur", message: "Entrez un nom et une taille")
         } else {
-            self.requestCreateFish(name: self.nameTextField.text!, speciesId: self.select)
+            self.requestCreateFish(name: self.nameTextField.text!, speciesId: self.select, size: Double(self.sizeTextField.text!)!, idAquarium: self.selectedAquarium?.id)
         }
         
     }
@@ -112,6 +147,36 @@ extension CreateFishVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.select = self.species[row].id!
+    }
+}
+
+extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.aquariums.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
+        if indexPath.row % 2 == 0 {
+            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
+        } else {
+            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
+        }
+        
+        cell.bindData(title: self.aquariums[indexPath.row].name)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAquarium = self.aquariums[indexPath.row]
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
     }
 }
 

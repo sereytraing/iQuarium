@@ -37,10 +37,9 @@ class DetailFishVC: DefaultVC {
     }
     
     @IBAction func showDetailAquarium(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "DetailAquarium", bundle: nil)
-        if let controller = storyboard.instantiateViewController(withIdentifier: "DetailAquariumVC") as? DetailAquariumVC {
-            controller.aquarium = self.fish?.aquarium
-            self.navigationController?.pushViewController(controller, animated: true)
-        }
+        //self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func showUpdateFish(_ sender: Any) {
     }
 }

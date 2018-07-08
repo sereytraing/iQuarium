@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +26,34 @@
                                     <constraint firstAttribute="width" secondItem="LMj-4S-uJB" secondAttribute="height" multiplier="16:9" id="aLD-w8-Ozb"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hwK-C8-aE2">
+                                <rect key="frame" x="256.5" y="181" width="50" height="50"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-dJ-4ow">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaT-op-ojt">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="showUpdateFish:" destination="kou-Bc-0um" eventType="touchUpInside" id="KOw-Cz-HWk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="36e-WX-qqh"/>
+                                    <constraint firstAttribute="trailing" secondItem="l8Q-dJ-4ow" secondAttribute="trailing" id="DzU-CE-yA2"/>
+                                    <constraint firstItem="l8Q-dJ-4ow" firstAttribute="leading" secondItem="hwK-C8-aE2" secondAttribute="leading" id="QvR-4I-dSI"/>
+                                    <constraint firstItem="l8Q-dJ-4ow" firstAttribute="top" secondItem="hwK-C8-aE2" secondAttribute="top" id="TRc-4r-lZx"/>
+                                    <constraint firstItem="QaT-op-ojt" firstAttribute="leading" secondItem="hwK-C8-aE2" secondAttribute="leading" id="Vhw-CB-6XM"/>
+                                    <constraint firstAttribute="bottom" secondItem="l8Q-dJ-4ow" secondAttribute="bottom" id="XF9-AE-3lf"/>
+                                    <constraint firstAttribute="bottom" secondItem="QaT-op-ojt" secondAttribute="bottom" id="ZJ8-8G-pCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="QaT-op-ojt" secondAttribute="trailing" id="gUX-YV-iM9"/>
+                                    <constraint firstItem="QaT-op-ojt" firstAttribute="top" secondItem="hwK-C8-aE2" secondAttribute="top" id="qAy-qh-M6o"/>
+                                    <constraint firstAttribute="height" constant="50" id="rmh-iy-f0L"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7om-O4-klx">
                                 <rect key="frame" x="0.0" y="261" width="375" height="140"/>
                                 <subviews>
@@ -175,6 +204,8 @@
                             <constraint firstItem="LMj-4S-uJB" firstAttribute="leading" secondItem="cXd-Mf-erW" secondAttribute="leading" id="9R1-GJ-8Ms"/>
                             <constraint firstItem="cXd-Mf-erW" firstAttribute="trailing" secondItem="7om-O4-klx" secondAttribute="trailing" id="Iup-HR-L90"/>
                             <constraint firstItem="7om-O4-klx" firstAttribute="leading" secondItem="cXd-Mf-erW" secondAttribute="leading" id="ZGz-NW-RiS"/>
+                            <constraint firstItem="hwK-C8-aE2" firstAttribute="bottom" secondItem="LMj-4S-uJB" secondAttribute="bottom" id="ZzN-hE-UJE"/>
+                            <constraint firstItem="hwK-C8-aE2" firstAttribute="centerX" secondItem="544-cp-duf" secondAttribute="centerX" multiplier="1.5" id="v7j-8U-q7e"/>
                             <constraint firstItem="LMj-4S-uJB" firstAttribute="top" secondItem="cXd-Mf-erW" secondAttribute="top" id="zTB-Jd-218"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cXd-Mf-erW"/>

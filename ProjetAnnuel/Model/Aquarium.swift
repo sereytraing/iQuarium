@@ -13,12 +13,14 @@ class Aquarium : Mappable{
     var id: String?
     var name: String?
     var pictures: [String]?
-    var temperature: Double?
+    var temperatureReal: Double?
+    var temperatureWanted: Double?
     var volume: Double?
     var isDirty: Bool?
     var fishes: [Fish]?
     var owner: User?
-    //var foodConfiguration: FoodConfiguration?
+    var foodConfiguration: FoodConfiguration?
+    var isFavorite: Bool?
     
     required init?(map: Map){
     }
@@ -27,12 +29,14 @@ class Aquarium : Mappable{
         id <- map["_id"]
         name <- map["name"]
         pictures <- map["pictures"]
-        temperature <- map["temperature"]
+        temperatureReal <- map["realTemp"]
+        temperatureWanted <- map["intentedTemp"]
         volume <- map["volume"]
         isDirty <- map["isDirty"]
         fishes <- map["Fishes"]
         owner <- map["Owner"]
-        //foodConfiguration <- map["FoodConfiguration"]
+        foodConfiguration <- map["FoodConfiguration"]
+        isFavorite <- map["isFavorite"]
         
     }
 }
