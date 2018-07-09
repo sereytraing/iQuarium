@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F303D6F20F38C4E0066BE75 /* UpdateFish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F303D6E20F38C4E0066BE75 /* UpdateFish.storyboard */; };
 		0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABAB20E61F00003F72DB /* SessionManager.swift */; };
 		0F7BABAE20E620D5003F72DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABAD20E620D5003F72DB /* User.swift */; };
 		0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F7BABAF20E623D5003F72DB /* Localizable.strings */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F303D6E20F38C4E0066BE75 /* UpdateFish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateFish.storyboard; sourceTree = "<group>"; };
 		0F7BABAB20E61F00003F72DB /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		0F7BABAD20E620D5003F72DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7BABAF20E623D5003F72DB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				0FB91FE520F294B700604DCD /* UpdateFishVC.swift */,
+				0F303D6E20F38C4E0066BE75 /* UpdateFish.storyboard */,
 			);
 			path = UpdateFishVC;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				0F7BABBD20E638FA003F72DB /* CreateAquarium.storyboard in Resources */,
 				0FFC070320E94D39008D7CBE /* DetailAquarium.storyboard in Resources */,
 				0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */,
+				0F303D6F20F38C4E0066BE75 /* UpdateFish.storyboard in Resources */,
 				0FB69364208CEB1500CEED01 /* LaunchScreen.storyboard in Resources */,
 				0FFC070920ED4CFC008D7CBE /* SimpleCell.xib in Resources */,
 				0FFC070520E94D45008D7CBE /* DetailFish.storyboard in Resources */,
