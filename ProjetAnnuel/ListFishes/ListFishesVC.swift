@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 
 class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var addButton: UIButton!
     
     var fishes = [Fish]()
@@ -22,13 +22,16 @@ class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addButton.layer.cornerRadius = 30.0
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
+       
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName: "FishCollectionCell", bundle:nil) , forCellWithReuseIdentifier: "fishCollectionCell")
+        
         let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
         longPressGesture.minimumPressDuration = 1.0 // 1 second press
         longPressGesture.delegate = self
-        self.tableView.addGestureRecognizer(longPressGesture)
+
+        self.collectionView?.addGestureRecognizer(longPressGesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,13 +53,13 @@ class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
                 case .success:
                     if let fishes = response.result.value {
                         self.fishes = fishes
-                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                     
                 case .failure:
                     if response.response?.statusCode == 204 {
                         self.fishes = []
-                        self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     } else {
                         self.okAlert(title: "Erreur", message: "Erreur Get Fishes \(String(describing: response.response?.statusCode))")
                     }
@@ -95,41 +98,46 @@ class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
     
     @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
         if gestureRecognizer.state == .ended {
-            let touchPoint = gestureRecognizer.location(in: self.tableView)
-            if let indexPath = self.tableView.indexPathForRow(at: touchPoint) {
+            let touchPoint = gestureRecognizer.location(in: self.collectionView)
+            if let indexPath = self.collectionView.indexPathForItem(at: touchPoint) {
                 self.askDeleteFish(index: indexPath.row)
             }
         }
     }
 }
 
-extension ListFishesVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension ListFishesVC: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.fishes.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
-        if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
-        } else {
-            cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "fishCollectionCell", for: indexPath)
+        if let fishCell = cell as? FishCollectionCell {
+            if let pictures = self.fishes[indexPath.row].species?.pictures, pictures.count > 0 {
+                fishCell.bindData(name: self.fishes[indexPath.row].name!, imageUrl: pictures.first)
+            } else {
+                fishCell.bindData(name: self.fishes[indexPath.row].name!)
+            }
         }
-        
-        cell.bindData(title: self.fishes[indexPath.row].name) //Peut ajouter imageurl
-        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "DetailFish", bundle: nil)
         if let controller = storyboard.instantiateViewController(withIdentifier: "DetailFishVC") as? DetailFishVC {
             controller.fish = self.fishes[indexPath.row]
             self.navigationController?.pushViewController(controller, animated: true)
         }
+    }
+}
+
+extension ListFishesVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var width = collectionView.bounds.width
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            width -= layout.minimumInteritemSpacing
+        }
+        return CGSize(width: width / 2, height: width / 2)
     }
 }

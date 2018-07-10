@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="I7a-ng-Du4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                                        <rect key="frame" x="0.0" y="20" width="375" height="750"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9i-P5-0Bj">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -201,7 +201,7 @@
                                     <constraint firstAttribute="bottom" secondItem="I7a-ng-Du4" secondAttribute="bottom" id="8Va-Ln-YYj"/>
                                     <constraint firstItem="I7a-ng-Du4" firstAttribute="centerX" secondItem="6UU-MW-eSk" secondAttribute="centerX" id="RvP-YN-bkp"/>
                                     <constraint firstAttribute="trailing" secondItem="I7a-ng-Du4" secondAttribute="trailing" id="tIe-Eg-XhH"/>
-                                    <constraint firstItem="I7a-ng-Du4" firstAttribute="top" secondItem="6UU-MW-eSk" secondAttribute="top" id="xlQ-uI-8gR"/>
+                                    <constraint firstItem="I7a-ng-Du4" firstAttribute="top" secondItem="6UU-MW-eSk" secondAttribute="top" constant="20" id="xlQ-uI-8gR"/>
                                     <constraint firstItem="I7a-ng-Du4" firstAttribute="leading" secondItem="6UU-MW-eSk" secondAttribute="leading" id="yM3-7I-9Tv"/>
                                 </constraints>
                             </scrollView>

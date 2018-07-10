@@ -57,6 +57,18 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
             } else {
                 self.temperatureLabel.text = "- °C"
             }
+            
+            if let pictures = aquarium.pictures, pictures.count > 0 {
+                if let url = URL(string: (aquarium.pictures?.first)!) {
+                    let data = try? Data(contentsOf: url)
+                    self.imageView.image = UIImage(data: data!)
+                } else {
+                    self.imageView.image = UIImage(named: "aquarium_1")
+                }
+            } else {
+                self.imageView.image = UIImage(named: "aquarium_1")
+            }
+            
             self.tableView.reloadData()
         }
     }

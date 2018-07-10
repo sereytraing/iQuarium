@@ -14,9 +14,11 @@ class DetailFishVC: DefaultVC {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var commonSpecieName: UILabel!
     @IBOutlet weak var specieLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var aquariumLabel: UILabel!
+    @IBOutlet weak var rarityLabel: UILabel!
     
     var fish: Fish?
     
@@ -33,11 +35,39 @@ class DetailFishVC: DefaultVC {
     }
 
     func bindData() {
-        if let fish = fish {
+        if let fish = fish, let specie = fish.species {
             self.nameLabel.text = fish.name
-            self.specieLabel.text = "\(String(describing: fish.species?.commonNames?.first!))"
-            self.heightLabel.text = "\(String(describing: fish.height)) cm"
-            self.aquariumLabel.text = "\(String(describing: fish.aquarium?.name))"
+            self.specieLabel.text = specie.scientificName!
+            self.heightLabel.text = "\(String(describing: fish.height!)) cm"
+            self.rarityLabel.text = specie.rarety!
+            
+            if let aquarium = fish.aquarium {
+                self.aquariumLabel.text = "\(String(describing: (aquarium.name)!))"
+            } else {
+                self.aquariumLabel.text = "Aucun"
+            }
+            
+            var fullCommonName = ""
+            for name in specie.commonNames! {
+                fullCommonName += name + ", "
+            }
+            if fullCommonName != "" {
+                fullCommonName = String(fullCommonName.dropLast())
+                fullCommonName = String(fullCommonName.dropLast())
+            }
+            
+            self.commonSpecieName.text = fullCommonName
+            
+            if let pictures = specie.pictures, pictures.count > 0 {
+                if let url = URL(string: (specie.pictures?.first)!) {
+                    let data = try? Data(contentsOf: url)
+                    self.imageView.image = UIImage(data: data!)
+                } else {
+                    self.imageView.image = UIImage(named: "fish_1")
+                }
+            } else {
+                self.imageView.image = UIImage(named: "fish_1")
+            }
         }
     }
     

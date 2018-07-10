@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0F303D6F20F38C4E0066BE75 /* UpdateFish.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F303D6E20F38C4E0066BE75 /* UpdateFish.storyboard */; };
+		0F57785E20F4B6380014CC56 /* FishCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57785C20F4B6380014CC56 /* FishCollectionCell.swift */; };
+		0F57785F20F4B6380014CC56 /* FishCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F57785D20F4B6380014CC56 /* FishCollectionCell.xib */; };
+		0F57786320F4BA680014CC56 /* AquariumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F57786120F4BA680014CC56 /* AquariumCell.swift */; };
+		0F57786420F4BA680014CC56 /* AquariumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F57786220F4BA680014CC56 /* AquariumCell.xib */; };
 		0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABAB20E61F00003F72DB /* SessionManager.swift */; };
 		0F7BABAE20E620D5003F72DB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7BABAD20E620D5003F72DB /* User.swift */; };
 		0F7BABB020E623D5003F72DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F7BABAF20E623D5003F72DB /* Localizable.strings */; };
@@ -50,6 +54,10 @@
 
 /* Begin PBXFileReference section */
 		0F303D6E20F38C4E0066BE75 /* UpdateFish.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateFish.storyboard; sourceTree = "<group>"; };
+		0F57785C20F4B6380014CC56 /* FishCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishCollectionCell.swift; sourceTree = "<group>"; };
+		0F57785D20F4B6380014CC56 /* FishCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FishCollectionCell.xib; sourceTree = "<group>"; };
+		0F57786120F4BA680014CC56 /* AquariumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AquariumCell.swift; sourceTree = "<group>"; };
+		0F57786220F4BA680014CC56 /* AquariumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AquariumCell.xib; sourceTree = "<group>"; };
 		0F7BABAB20E61F00003F72DB /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		0F7BABAD20E620D5003F72DB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7BABAF20E623D5003F72DB /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -115,6 +123,33 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		0F57785B20F4B60D0014CC56 /* SimpleCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC070620ED4CF1008D7CBE /* SimpleCell.swift */,
+				0FFC070820ED4CFC008D7CBE /* SimpleCell.xib */,
+			);
+			path = SimpleCell;
+			sourceTree = "<group>";
+		};
+		0F57786020F4B63B0014CC56 /* FishCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F57785C20F4B6380014CC56 /* FishCollectionCell.swift */,
+				0F57785D20F4B6380014CC56 /* FishCollectionCell.xib */,
+			);
+			path = FishCollectionCell;
+			sourceTree = "<group>";
+		};
+		0F57786520F4BA6B0014CC56 /* AquariumCell */ = {
+			isa = PBXGroup;
+			children = (
+				0F57786120F4BA680014CC56 /* AquariumCell.swift */,
+				0F57786220F4BA680014CC56 /* AquariumCell.xib */,
+			);
+			path = AquariumCell;
+			sourceTree = "<group>";
+		};
 		0F7BABA820E6102C003F72DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +177,9 @@
 				0FB69372208CED1300CEED01 /* DefaultVC.swift */,
 				0F7BABAB20E61F00003F72DB /* SessionManager.swift */,
 				0F7BABAF20E623D5003F72DB /* Localizable.strings */,
-				0FFC070620ED4CF1008D7CBE /* SimpleCell.swift */,
-				0FFC070820ED4CFC008D7CBE /* SimpleCell.xib */,
+				0F57786020F4B63B0014CC56 /* FishCollectionCell */,
+				0F57785B20F4B60D0014CC56 /* SimpleCell */,
+				0F57786520F4BA6B0014CC56 /* AquariumCell */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -361,9 +397,11 @@
 				0FB69364208CEB1500CEED01 /* LaunchScreen.storyboard in Resources */,
 				0FFC070920ED4CFC008D7CBE /* SimpleCell.xib in Resources */,
 				0FFC070520E94D45008D7CBE /* DetailFish.storyboard in Resources */,
+				0F57786420F4BA680014CC56 /* AquariumCell.xib in Resources */,
 				0FB69378208CEFC100CEED01 /* CreateAccount.storyboard in Resources */,
 				0FB69361208CEB1500CEED01 /* Assets.xcassets in Resources */,
 				0FFC06FB20E938F7008D7CBE /* ListFishes.storyboard in Resources */,
+				0F57785F20F4B6380014CC56 /* FishCollectionCell.xib in Resources */,
 				0FB6935F208CEB1400CEED01 /* Main.storyboard in Resources */,
 				0FFC06E720E923B9008D7CBE /* ListAquarium.storyboard in Resources */,
 			);
@@ -436,9 +474,11 @@
 				0FB6936E208CEC7E00CEED01 /* LoginVC.swift in Sources */,
 				0F7BABBA20E638BD003F72DB /* CreateAquarium.swift in Sources */,
 				0FFC06FD20E94C88008D7CBE /* DetailAquariumVC.swift in Sources */,
+				0F57785E20F4B6380014CC56 /* FishCollectionCell.swift in Sources */,
 				0F7BABAC20E61F00003F72DB /* SessionManager.swift in Sources */,
 				0F7BABB220E623ED003F72DB /* String.swift in Sources */,
 				0FB91FE620F294B700604DCD /* UpdateFishVC.swift in Sources */,
+				0F57786320F4BA680014CC56 /* AquariumCell.swift in Sources */,
 				0F7BABB620E63351003F72DB /* Fish.swift in Sources */,
 				0FFC06F220E93428008D7CBE /* CreateFishVC.swift in Sources */,
 				0F7BABAE20E620D5003F72DB /* User.swift in Sources */,
