@@ -35,6 +35,9 @@ class CreateFishVC: DefaultVC {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
+        self.submitButton.layer.cornerRadius = 25
+        self.submitButton.layer.borderWidth = 1
+        self.submitButton.layer.borderColor = UIColor(red: 60, green: 85, blue: 121).cgColor
         self.requestGetAquariums()
     }
 
@@ -157,12 +160,7 @@ extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
-        if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
-        } else {
-            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
-        }
-        
+        cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         cell.bindData(title: self.aquariums[indexPath.row].name)
         
         return cell
@@ -174,9 +172,11 @@ extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedAquarium = self.aquariums[indexPath.row]
+        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
 }
 

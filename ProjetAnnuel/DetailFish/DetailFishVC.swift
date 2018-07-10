@@ -13,7 +13,6 @@ import AlamofireObjectMapper
 class DetailFishVC: DefaultVC {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var commonSpecieName: UILabel!
     @IBOutlet weak var specieLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
@@ -36,7 +35,6 @@ class DetailFishVC: DefaultVC {
 
     func bindData() {
         if let fish = fish, let specie = fish.species {
-            self.nameLabel.text = fish.name
             self.title = fish.name
             self.specieLabel.text = specie.scientificName!
             self.heightLabel.text = "\(String(describing: fish.height!)) cm"

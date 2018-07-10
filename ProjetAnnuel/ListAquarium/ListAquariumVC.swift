@@ -21,6 +21,7 @@ class ListAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Vos aquariums"
         self.addButton.layer.cornerRadius = 30.0
         self.tableView.delegate = self
         self.tableView.dataSource = self

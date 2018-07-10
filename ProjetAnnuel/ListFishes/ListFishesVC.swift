@@ -21,8 +21,8 @@ class ListFishesVC: DefaultVC, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Vos poissons"
         self.addButton.layer.cornerRadius = 30.0
-       
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(UINib(nibName: "FishCollectionCell", bundle:nil) , forCellWithReuseIdentifier: "fishCollectionCell")

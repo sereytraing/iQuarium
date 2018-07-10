@@ -13,7 +13,6 @@ import AlamofireObjectMapper
 class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var volumeLabel: UILabel!
     @IBOutlet weak var isDirtyLabel: UILabel!
@@ -46,7 +45,6 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     
     func bindData() {
         if let aquarium = aquarium {
-            self.nameLabel.text = aquarium.name
             self.title = aquarium.name
             self.volumeLabel.text = "\(String(describing: aquarium.volume!)) m³"
             self.isDirtyLabel.text = "\(String(describing: aquarium.isDirty))"

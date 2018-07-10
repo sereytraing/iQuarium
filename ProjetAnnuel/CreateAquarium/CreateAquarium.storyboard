@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create Aquarium-->
+        <!--Créer un aquarium-->
         <scene sceneID="POn-Mu-b0k">
             <objects>
-                <viewController storyboardIdentifier="createAquariumVC" id="uhX-Zd-p7G" customClass="CreateAquarium" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createAquariumVC" title="Créer un aquarium" id="uhX-Zd-p7G" customClass="CreateAquarium" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMF-jA-jjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

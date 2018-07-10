@@ -22,16 +22,14 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz3-rg-K1p">
-                                <rect key="frame" x="295" y="587" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.8082192708" green="0.94832645940000004" blue="0.91180661910000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz3-rg-K1p">
+                                <rect key="frame" x="305" y="597" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="VJN-V2-Hvq"/>
-                                    <constraint firstAttribute="width" constant="60" id="ny2-D6-pDe"/>
+                                    <constraint firstAttribute="height" constant="50" id="VJN-V2-Hvq"/>
+                                    <constraint firstAttribute="width" constant="50" id="ny2-D6-pDe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="add_icon">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <segue destination="1PV-Cx-Yor" kind="show" id="dIA-z2-SDG"/>
@@ -67,4 +65,7 @@
             <point key="canvasLocation" x="745" y="57"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add_icon" width="200" height="200"/>
+    </resources>
 </document>

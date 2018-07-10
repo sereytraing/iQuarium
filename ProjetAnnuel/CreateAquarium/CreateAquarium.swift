@@ -67,6 +67,11 @@ class CreateAquarium: DefaultVC {
             self.switchFavoris.isOn = (self.aquariumToUpdate?.isFavorite)!
         }
         self.requestGetFishes()
+        if self.wantToUpdate {
+            self.title = "Modifier un aquarium"
+        } else {
+            self.title = "Créer un aquarium"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -265,7 +270,7 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
-        cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
+        cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         cell.bindData(title: self.fishes[indexPath.row].name)
         
         return cell

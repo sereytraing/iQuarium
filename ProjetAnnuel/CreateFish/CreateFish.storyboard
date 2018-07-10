@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Create FishVC-->
+        <!--Créer un poisson-->
         <scene sceneID="wSk-BU-EyZ">
             <objects>
-                <viewController id="pla-Dt-gDS" customClass="CreateFishVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Créer un poisson" id="pla-Dt-gDS" customClass="CreateFishVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XMs-s1-fBn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="04l-GP-BH8">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="nom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-Zt-yI9">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nom du poisson" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dkl-Zt-yI9">
                                                         <rect key="frame" x="65.5" y="0.0" width="244" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Qwk-uq-wpK"/>
@@ -39,7 +39,7 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gM8-y7-ETM">
                                                         <rect key="frame" x="65.5" y="50" width="244" height="1"/>
-                                                        <color key="backgroundColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.77783946699999995" green="0.77783946699999995" blue="0.77783946699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="YwC-nf-TrD"/>
                                                         </constraints>
@@ -58,7 +58,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEs-Ne-oI0">
                                                 <rect key="frame" x="0.0" y="70" width="375" height="70"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="taille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVm-NY-K10">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Taille" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVm-NY-K10">
                                                         <rect key="frame" x="66" y="0.0" width="243.5" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="5eZ-Xw-Eza"/>
@@ -69,7 +69,7 @@
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iWF-jK-f30">
                                                         <rect key="frame" x="66" y="50" width="243.5" height="1"/>
-                                                        <color key="backgroundColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.77783946699999995" green="0.77783946699999995" blue="0.77783946699999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="jsL-Z2-eQw"/>
                                                         </constraints>
@@ -96,34 +96,31 @@
                                                     <constraint firstAttribute="height" constant="150" id="LRG-Tq-OPm"/>
                                                 </constraints>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjJ-nF-LeI">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T6y-Lh-zl2">
                                                 <rect key="frame" x="0.0" y="506" width="375" height="70"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zo2-SQ-zuT">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmQ-m4-Qr2">
                                                         <rect key="frame" x="65.5" y="10" width="244" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="lT0-AG-5Pm"/>
+                                                            <constraint firstAttribute="height" constant="50" id="syQ-4R-bAV"/>
                                                         </constraints>
                                                         <state key="normal" title="Confirmer">
-                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="submitButtonClicked:" destination="pla-Dt-gDS" eventType="touchUpInside" id="fHm-AD-fqZ"/>
+                                                            <action selector="submitButtonClicked:" destination="pla-Dt-gDS" eventType="touchUpInside" id="6ob-6c-7bH"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstItem="Zo2-SQ-zuT" firstAttribute="centerX" secondItem="EjJ-nF-LeI" secondAttribute="centerX" id="TN5-ce-UWf"/>
-                                                    <constraint firstAttribute="height" constant="70" id="e0W-o5-zRu"/>
-                                                    <constraint firstItem="Zo2-SQ-zuT" firstAttribute="centerY" secondItem="EjJ-nF-LeI" secondAttribute="centerY" id="hdc-gF-ApR"/>
+                                                    <constraint firstItem="zmQ-m4-Qr2" firstAttribute="centerY" secondItem="T6y-Lh-zl2" secondAttribute="centerY" id="0i4-00-r3t"/>
+                                                    <constraint firstItem="zmQ-m4-Qr2" firstAttribute="centerX" secondItem="T6y-Lh-zl2" secondAttribute="centerX" id="Nbc-eu-WFR"/>
+                                                    <constraint firstAttribute="height" constant="70" id="mvc-VK-rjJ"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="Zo2-SQ-zuT" firstAttribute="width" secondItem="Dkl-Zt-yI9" secondAttribute="width" id="oJt-0q-K46"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -140,6 +137,7 @@
                             <constraint firstItem="SNe-vw-uJv" firstAttribute="trailing" secondItem="acu-rT-x0x" secondAttribute="trailing" id="BJu-D6-vXK"/>
                             <constraint firstItem="Dkl-Zt-yI9" firstAttribute="width" secondItem="XMs-s1-fBn" secondAttribute="width" multiplier="0.65" id="KCw-uf-dv4"/>
                             <constraint firstItem="acu-rT-x0x" firstAttribute="leading" secondItem="SNe-vw-uJv" secondAttribute="leading" id="V1P-HX-ZnK"/>
+                            <constraint firstItem="zmQ-m4-Qr2" firstAttribute="width" secondItem="XMs-s1-fBn" secondAttribute="width" multiplier="0.65" id="cIA-0j-BTN"/>
                             <constraint firstItem="acu-rT-x0x" firstAttribute="top" secondItem="SNe-vw-uJv" secondAttribute="top" id="uGF-VX-sme"/>
                             <constraint firstItem="SNe-vw-uJv" firstAttribute="bottom" secondItem="acu-rT-x0x" secondAttribute="bottom" id="xbB-Af-e6x"/>
                         </constraints>
@@ -149,7 +147,7 @@
                         <outlet property="nameTextField" destination="Dkl-Zt-yI9" id="a4M-yT-2xt"/>
                         <outlet property="pickerView" destination="ULS-bw-5iw" id="dcC-jI-mki"/>
                         <outlet property="sizeTextField" destination="oVm-NY-K10" id="xrb-B1-N3y"/>
-                        <outlet property="submitButton" destination="Zo2-SQ-zuT" id="1bA-EM-ZGb"/>
+                        <outlet property="submitButton" destination="zmQ-m4-Qr2" id="ZH0-TB-ytI"/>
                         <outlet property="tableView" destination="gna-hJ-fhv" id="uCe-o2-Wqv"/>
                     </connections>
                 </viewController>

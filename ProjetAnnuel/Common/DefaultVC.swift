@@ -16,13 +16,18 @@ class DefaultVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.setupNavBarStyle()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupNavBarStyle() {
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 216, green: 232, blue: 235)
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor(red: 255, green: 169, blue: 100)]
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 255, green: 169, blue: 100)
     }
     
     func okAlert(title: String, message: String) {
