@@ -281,6 +281,7 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !self.selectedIndexes.contains(indexPath.row) {
             self.selectedIndexes.append(indexPath.row)
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         }
         print(self.selectedIndexes)
     }
@@ -289,6 +290,7 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
         if self.selectedIndexes.contains(indexPath.row) {
             if let index = self.selectedIndexes.index(of: indexPath.row) {
                 self.selectedIndexes.remove(at: index)
+                tableView.cellForRow(at: indexPath)?.accessoryType = .none
             }
         }
         print(self.selectedIndexes)

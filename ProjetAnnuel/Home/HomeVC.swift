@@ -13,6 +13,7 @@ import AlamofireObjectMapper
 class HomeVC: DefaultVC, UIScrollViewDelegate{
 
     var user: User?
+    var aquarium: Aquarium?
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var noAquariumView: UIView!
@@ -78,6 +79,7 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     func bindData() {
         if self.user?.aquariums?.count == 1 {
             if let aquarium = self.user?.aquariums?.first {
+                self.aquarium = aquarium
                 self.nameAquarium.text = aquarium.name
                 if aquarium.isDirty! {
                     self.isDirtyLabel.text = "Sale"
@@ -97,6 +99,7 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
         if let aquariums = self.user?.aquariums {
             for aquarium in aquariums {
                 if aquarium.isFavorite! {
+                    self.aquarium = aquarium
                     self.nameAquarium.text = aquarium.name
                     if aquarium.isDirty! {
                         self.isDirtyLabel.text = "Sale"
@@ -116,6 +119,44 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
         }
     }
     
+    func requestFeedFish() {
+        if let aquarium = self.aquarium {
+            
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let result = formatter.string(from: date)
+            
+            
+            let parameters = [
+                "distribution": result
+                ] as [String : Any]
+            
+            
+            let url = self.baseUrl + "/aquariums/" + aquarium.id! + "/giveFood"
+            Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<Aquarium>) in
+                
+                if response.response?.statusCode == 401 {
+                    self.logOut()
+                } else {
+                    switch response.result {
+                    case .success:
+                        self.okAlert(title: "Succès", message: "La nourriture a été distribuée")
+                        
+                    case .failure:
+                        if response.response?.statusCode == 403{
+                            self.okAlert(title: "Erreur", message: "Il n'y a plus de nourriture dans le réservoir. Veuillez en ajouter.")
+                        } else {
+                            self.okAlert(title: "Erreur", message: "Erreur Feed Fish \(String(describing: response.response?.statusCode))")
+                        }
+                        
+                    }
+                }
+            })
+        }
+        
+    }
+    
     @IBAction func tmp(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
@@ -127,10 +168,10 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     }
     
     @IBAction func feedFishClicked(_ sender: Any) {
-        let alert = UIAlertController(title: "", message: "Êtes-vous sùr de vouloir nourrir vos poissons ?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "", message: "Êtes-vous sûr de vouloir nourrir vos poissons ?", preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Oui", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            //self.feedFish()
+            self.requestFeedFish()
         }
         let closeAction = UIAlertAction(title: "Non ", style: UIAlertActionStyle.default) {
             UIAlertAction in

@@ -27,10 +27,5 @@ class SimpleCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        /*if self.accessoryType == .checkmark {
-            self.accessoryType = .none
-        } else {
-            self.accessoryType = .checkmark
-        }*/
     }
 }

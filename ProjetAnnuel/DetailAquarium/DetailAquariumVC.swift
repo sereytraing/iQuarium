@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AlamofireObjectMapper
 
-class DetailAquariumVC: DefaultVC {
+class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,6 +28,11 @@ class DetailAquariumVC: DefaultVC {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "AquariumListCell", bundle: nil), forCellReuseIdentifier: "aquariumCell")
+        
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self
+        self.tableView.addGestureRecognizer(longPressGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,6 +80,53 @@ class DetailAquariumVC: DefaultVC {
                 }
             }
         })
+    }
+    
+    func requestDeleteFishInAquarium(fishes: [String]) {
+        let url = self.baseUrl + "/aquariums/" + (self.aquarium?.id)! + "/fishes/"
+        let parameters = [
+            "Fishes": fishes 
+            ] as [String : Any]
+        
+        Alamofire.request(url, method: .delete, parameters: parameters, encoding: JSONEncoding.default, headers: headerToken).validate(statusCode: 200..<300).responseObject(completionHandler: { (response: DataResponse<Aquarium>) in
+            
+            if response.response?.statusCode == 401 {
+                self.logOut()
+            } else {
+                switch response.result {
+                case .success:
+                    let alert = UIAlertController(title: "Succès", message: "Poisson retiré", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { _ in
+                        self.requestGetAquarium()
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                case .failure:
+                    self.okAlert(title: "Erreur", message: "Erreur Create Aquarium \(String(describing: response.response?.statusCode))")
+                }
+            }
+        })
+    }
+    
+    
+    func askDeleteFishInAquarium(index: Int) {
+        let alert = UIAlertController(title: "Attention", message: "Voulez-vous enlever le poisson de l'aquarium ?", preferredStyle: UIAlertControllerStyle.alert)
+        let yesAction = UIAlertAction(title: "Oui", style: UIAlertActionStyle.default) {
+            UIAlertAction in
+            let tabFish: [String] = [(self.aquarium?.fishes![index].id)!]
+            self.requestDeleteFishInAquarium(fishes: tabFish)
+        }
+        alert.addAction(yesAction)
+        alert.addAction(UIAlertAction(title: "Non", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        if gestureRecognizer.state == .ended {
+            let touchPoint = gestureRecognizer.location(in: self.tableView)
+            if let indexPath = self.tableView.indexPathForRow(at: touchPoint) {
+                self.askDeleteFishInAquarium(index: indexPath.row)
+            }
+        }
     }
     
     @IBAction func updateFishInAquarium(_ sender: Any) {

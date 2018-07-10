@@ -34,7 +34,7 @@
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaT-op-ojt">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Update fish"/>
                                         <connections>
                                             <action selector="showUpdateFish:" destination="kou-Bc-0um" eventType="touchUpInside" id="KOw-Cz-HWk"/>
                                         </connections>
