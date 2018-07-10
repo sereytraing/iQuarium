@@ -168,12 +168,18 @@ extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 40.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.selectedAquarium = self.aquariums[indexPath.row]
-        tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        
+        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+            self.selectedAquarium = nil
+        } else {
+            self.selectedAquarium = self.aquariums[indexPath.row]
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {

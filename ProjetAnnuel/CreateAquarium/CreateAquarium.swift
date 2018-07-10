@@ -271,14 +271,14 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
-        cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
+        cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
         cell.bindData(title: self.fishes[indexPath.row].name)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 40.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
