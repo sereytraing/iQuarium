@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Update FishVC-->
+        <!--Modifier-->
         <scene sceneID="xav-CU-UfC">
             <objects>
-                <viewController storyboardIdentifier="updateFishVC" id="ru4-sO-jg4" customClass="UpdateFishVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateFishVC" title="Modifier" id="ru4-sO-jg4" customClass="UpdateFishVC" customModule="ProjetAnnuel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DeM-ge-kAk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -96,18 +96,32 @@
                                             <constraint firstAttribute="height" constant="20" id="753-O8-VWA"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpu-A3-tt4">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="50"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-wx-jpc">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K11-7I-rOM">
+                                                <rect key="frame" x="65.5" y="10" width="244" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="ywT-W6-Po7"/>
+                                                </constraints>
+                                                <state key="normal" title="Confirmer">
+                                                    <color key="titleColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="submitButtonClicked:" destination="ru4-sO-jg4" eventType="touchUpInside" id="soL-y7-4eS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="XmJ-av-2Fe"/>
+                                            <constraint firstAttribute="height" constant="70" id="P1W-IS-jn9"/>
+                                            <constraint firstItem="K11-7I-rOM" firstAttribute="centerX" secondItem="lGJ-wx-jpc" secondAttribute="centerX" id="iRh-vm-qtr"/>
+                                            <constraint firstItem="K11-7I-rOM" firstAttribute="centerY" secondItem="lGJ-wx-jpc" secondAttribute="centerY" id="ioi-7w-ils"/>
                                         </constraints>
-                                        <state key="normal" title="Confirmer"/>
-                                        <connections>
-                                            <action selector="submitButtonClicked:" destination="ru4-sO-jg4" eventType="touchUpInside" id="DcB-ob-laY"/>
-                                        </connections>
-                                    </button>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="02J-R1-kgV">
-                                        <rect key="frame" x="0.0" y="210" width="375" height="387"/>
+                                        <rect key="frame" x="0.0" y="230" width="375" height="367"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -116,6 +130,7 @@
                         <color key="backgroundColor" red="0.94432414460000003" green="0.97994783890000003" blue="0.97091873230000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="2QD-cA-ncq" firstAttribute="width" secondItem="DeM-ge-kAk" secondAttribute="width" multiplier="0.65" id="0Jw-nT-zaC"/>
+                            <constraint firstItem="K11-7I-rOM" firstAttribute="width" secondItem="DeM-ge-kAk" secondAttribute="width" multiplier="0.65" id="5S5-xo-WaQ"/>
                             <constraint firstItem="krI-gz-fcK" firstAttribute="trailing" secondItem="l5W-uy-m5G" secondAttribute="trailing" id="9hi-mh-xJ8"/>
                             <constraint firstItem="krI-gz-fcK" firstAttribute="bottom" secondItem="l5W-uy-m5G" secondAttribute="bottom" id="RQ7-M4-Btn"/>
                             <constraint firstItem="l5W-uy-m5G" firstAttribute="top" secondItem="krI-gz-fcK" secondAttribute="top" constant="50" id="Xm9-NL-5kH"/>
@@ -127,7 +142,7 @@
                     <connections>
                         <outlet property="heightTextField" destination="2QD-cA-ncq" id="loE-W1-Ie1"/>
                         <outlet property="nameTextField" destination="gQp-B1-anj" id="vrK-je-s12"/>
-                        <outlet property="submitButton" destination="Dpu-A3-tt4" id="7KY-hf-cxC"/>
+                        <outlet property="submitButton" destination="K11-7I-rOM" id="U7b-BM-leC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AK6-jv-PZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

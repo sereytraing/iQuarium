@@ -24,6 +24,9 @@ class UpdateFishVC: DefaultVC {
         super.viewDidLoad()
         self.nameTextField.text = self.fish?.name
         self.heightTextField.text = "\(String(describing: self.fish!.height!))"
+        self.submitButton.layer.cornerRadius = 25
+        self.submitButton.layer.borderWidth = 1
+        self.submitButton.layer.borderColor = UIColor(red: 60, green: 85, blue: 121).cgColor
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {

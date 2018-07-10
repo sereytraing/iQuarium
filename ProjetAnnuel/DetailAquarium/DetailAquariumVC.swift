@@ -47,6 +47,7 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     func bindData() {
         if let aquarium = aquarium {
             self.nameLabel.text = aquarium.name
+            self.title = aquarium.name
             self.volumeLabel.text = "\(String(describing: aquarium.volume!)) m³"
             self.isDirtyLabel.text = "\(String(describing: aquarium.isDirty))"
             
@@ -174,17 +175,20 @@ extension DetailAquariumVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
         if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
+            cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         } else {
-            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
+            cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
         }
         
         if let fishes = self.aquarium?.fishes {
-            cell.bindData(title: fishes[indexPath.row].name) //Peut ajouter imageurl
+            if let pictures = fishes[indexPath.row].species?.pictures, pictures.count > 0 {
+                cell.bindData(title: fishes[indexPath.row].name, imageURL: pictures.first)
+            } else {
+                cell.bindData(title: fishes[indexPath.row].name)
+            }
         } else {
             cell.bindData(title: "")
         }
-        
         return cell
     }
     

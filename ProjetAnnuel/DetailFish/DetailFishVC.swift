@@ -37,6 +37,7 @@ class DetailFishVC: DefaultVC {
     func bindData() {
         if let fish = fish, let specie = fish.species {
             self.nameLabel.text = fish.name
+            self.title = fish.name
             self.specieLabel.text = specie.scientificName!
             self.heightLabel.text = "\(String(describing: fish.height!)) cm"
             self.rarityLabel.text = specie.rarety!

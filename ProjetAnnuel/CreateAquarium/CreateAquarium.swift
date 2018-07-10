@@ -21,6 +21,7 @@ class CreateAquarium: DefaultVC {
     @IBOutlet weak var hourPickerView: UIPickerView!
     @IBOutlet weak var minutePickerView: UIPickerView!
     @IBOutlet weak var addFishButtonView: UIView!
+    @IBOutlet weak var separatorFishView: UIView!
     
     let volumeTabString = ["100 L", "200 L", "300 L"]
     let volumeTabValue = [100, 200, 300]
@@ -59,6 +60,7 @@ class CreateAquarium: DefaultVC {
         self.addFishButton.layer.borderColor = UIColor.white.cgColor
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
         self.addFishButtonView.isHidden = self.wantToUpdate
+        self.separatorFishView.isHidden = self.wantToUpdate
         self.tableView.isHidden = self.wantToUpdate
         if self.wantToUpdate && self.aquariumToUpdate != nil {
             self.nameTextField.text = self.aquariumToUpdate?.name
@@ -263,19 +265,14 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
-        if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
-        } else {
-            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
-        }
-        
-        cell.bindData(title: self.fishes[indexPath.row].name) //Peut ajouter imageurl
+        cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
+        cell.bindData(title: self.fishes[indexPath.row].name)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 45.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

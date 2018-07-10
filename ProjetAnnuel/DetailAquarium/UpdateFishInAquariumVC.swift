@@ -19,11 +19,13 @@ class UpdateFishInAquariumVC: DefaultVC {
     var selectedIndexes = [Int]()
     let headerToken: HTTPHeaders = ["Content-Type": "application/json",
                                     "Authorization": SessionManager.GetInstance().getToken()!]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bindData()
-       
+        self.submitButton.layer.cornerRadius = 25
+        self.submitButton.layer.borderWidth = 1
+        self.submitButton.layer.borderColor = UIColor(red: 60, green: 85, blue: 121).cgColor
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
@@ -150,11 +152,10 @@ extension UpdateFishInAquariumVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aquariumCell", for: indexPath) as! AquariumListCell
         if indexPath.row % 2 == 0 {
-            cell.view.backgroundColor = UIColor(red: 211, green: 232, blue: 225)
+            cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
         } else {
-            cell.view.backgroundColor = UIColor(red: 194, green: 214, blue: 208)
+            cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         }
-        
         if self.fishes.count > 0 {
             cell.bindData(title: fishes[indexPath.row].name) //Peut ajouter imageurl
         } else {
