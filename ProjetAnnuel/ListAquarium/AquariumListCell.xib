@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aquarium_miniature" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-bV-zbM">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KBt-bV-zbM">
                         <rect key="frame" x="26" y="17.5" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="Zcf-Cu-bHH"/>
@@ -50,7 +50,4 @@
             <point key="canvasLocation" x="34" y="63.5"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="aquarium_miniature" width="300" height="169"/>
-    </resources>
 </document>

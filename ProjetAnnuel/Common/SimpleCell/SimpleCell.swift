@@ -17,8 +17,6 @@ class SimpleCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
-        self.accessoryType = .none
     }
     
     func bindData(title: String?) {

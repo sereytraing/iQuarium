@@ -47,7 +47,12 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
         if let aquarium = aquarium {
             self.title = aquarium.name
             self.volumeLabel.text = "\(String(describing: aquarium.volume!)) m³"
-            self.isDirtyLabel.text = "\(String(describing: aquarium.isDirty))"
+            
+            if aquarium.isDirty! {
+                self.isDirtyLabel.text = "Sale"
+            } else {
+                self.isDirtyLabel.text = "Propre"
+            }
             
             if let temp = aquarium.temperatureReal {
                 self.temperatureLabel.text = "\(String(describing: Int(temp)))°C"

@@ -23,6 +23,10 @@ class CreateAccountVC: DefaultVC {
         self.submitButton.layer.cornerRadius = 25
         self.submitButton.layer.borderWidth = 1
         self.submitButton.layer.borderColor = UIColor.darkGray.cgColor
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,5 +65,10 @@ class CreateAccountVC: DefaultVC {
                 self.okAlert(title: "Erreur", message: "Erreur \(String(describing: response.response?.statusCode))")
             }
         })
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.passwordTextField.resignFirstResponder()
+        self.usernameTextField.resignFirstResponder()
     }
 }

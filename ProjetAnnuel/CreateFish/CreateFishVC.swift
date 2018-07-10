@@ -32,6 +32,7 @@ class CreateFishVC: DefaultVC {
         self.requestGetAllSpecies()
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
+        self.nameTextField.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
@@ -177,6 +178,14 @@ extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        self.selectedAquarium = nil
+    }
+}
+
+extension CreateFishVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 

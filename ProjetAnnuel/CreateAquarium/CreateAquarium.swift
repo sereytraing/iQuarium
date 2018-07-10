@@ -46,6 +46,7 @@ class CreateAquarium: DefaultVC {
         self.hourPickerView.dataSource = self
         self.minutePickerView.delegate = self
         self.minutePickerView.dataSource = self
+        self.nameTextField.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.allowsMultipleSelection = true
@@ -277,7 +278,7 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 45.0
+        return 80.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -298,3 +299,12 @@ extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
         print(self.selectedIndexes)
     }
 }
+
+extension CreateAquarium: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+}
+
+

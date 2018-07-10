@@ -28,6 +28,8 @@ class LoginVC: DefaultVC {
         self.createAccountButton.layer.cornerRadius = 25
         self.createAccountButton.layer.borderWidth = 1
         self.createAccountButton.layer.borderColor = UIColor.white.cgColor
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,5 +99,10 @@ class LoginVC: DefaultVC {
                 self.okAlert(title: "Erreur", message: "Erreur Get Profile \(String(describing: response.response?.statusCode))")
             }
         })
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.passwordTextField.resignFirstResponder()
+        self.usernameTextField.resignFirstResponder()
     }
 }

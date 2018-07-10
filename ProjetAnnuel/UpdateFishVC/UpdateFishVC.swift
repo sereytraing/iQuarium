@@ -27,6 +27,8 @@ class UpdateFishVC: DefaultVC {
         self.submitButton.layer.cornerRadius = 25
         self.submitButton.layer.borderWidth = 1
         self.submitButton.layer.borderColor = UIColor(red: 60, green: 85, blue: 121).cgColor
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
@@ -61,5 +63,10 @@ class UpdateFishVC: DefaultVC {
                 }
             }
         })
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        self.nameTextField.resignFirstResponder()
+        self.heightTextField.resignFirstResponder()
     }
 }

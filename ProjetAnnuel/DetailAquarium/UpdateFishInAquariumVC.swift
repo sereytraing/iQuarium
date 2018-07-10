@@ -156,17 +156,20 @@ extension UpdateFishInAquariumVC: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
         }
-        if self.fishes.count > 0 {
-            cell.bindData(title: fishes[indexPath.row].name) //Peut ajouter imageurl
-        } else {
-            cell.bindData(title: "")
+        
+        if self.fishes.count > 0{
+            if let pictures = self.fishes[indexPath.row].species?.pictures, pictures.count > 0 {
+                cell.bindData(title: self.fishes[indexPath.row].name, imageURL: pictures.first)
+            } else {
+                cell.bindData(title: self.fishes[indexPath.row].name)
+            }
         }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 40.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

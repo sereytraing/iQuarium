@@ -27,6 +27,8 @@ class AquariumListCell: UITableViewCell {
             let url = URL(string: imageURL!)
             let data = try? Data(contentsOf: url!)
             coverImageView.image = UIImage(data: data!)
+        } else {
+            coverImageView.image = UIImage(named: "no_icon")
         }
         
     }
