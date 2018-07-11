@@ -92,7 +92,12 @@ class CreateAquarium: DefaultVC {
     }
     
     func prepareRequestUpdateAquarium() {
-        
+        if let name = self.nameTextField.text, !name.isEmpty {
+            let cycle = self.selectHour * 3600 + self.selectMinute * 60
+            self.requestUpdateAquarium(name: name, volume: self.selectVolume, isFavorite: self.switchFavoris.isOn, cycle: cycle)
+        } else {
+            self.okAlert(title: "Erreur", message: "error_name_temperature_aquarium_creation".localized)
+        }
     }
     
     func prepareRequestCreateAquarium() {
