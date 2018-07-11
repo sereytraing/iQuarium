@@ -22,6 +22,8 @@ class CreateAquarium: DefaultVC {
     @IBOutlet weak var minutePickerView: UIPickerView!
     @IBOutlet weak var addFishButtonView: UIView!
     @IBOutlet weak var separatorFishView: UIView!
+    @IBOutlet weak var noFishViewLabel: UIView!
+    @IBOutlet weak var viewTableView: UIView!
     
     let volumeTabString = ["100 L", "200 L", "300 L"]
     let volumeTabValue = [100, 200, 300]
@@ -31,6 +33,7 @@ class CreateAquarium: DefaultVC {
     var selectHour = 0
     var selectMinute = 0
     var fishes = [Fish]()
+    var fishesWithoutAquarium = [Fish]()
     var selectedIndexes = [Int]()
     var wantToUpdate = false
     var aquariumToUpdate: Aquarium?
@@ -62,7 +65,7 @@ class CreateAquarium: DefaultVC {
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
         self.addFishButtonView.isHidden = self.wantToUpdate
         self.separatorFishView.isHidden = self.wantToUpdate
-        self.tableView.isHidden = self.wantToUpdate
+        self.viewTableView.isHidden = self.wantToUpdate
         if self.wantToUpdate && self.aquariumToUpdate != nil {
             self.nameTextField.text = self.aquariumToUpdate?.name
             self.switchFavoris.isOn = (self.aquariumToUpdate?.isFavorite)!
@@ -172,18 +175,30 @@ class CreateAquarium: DefaultVC {
                 switch response.result {
                 case .success:
                     if let fishes = response.result.value {
-                        self.fishes = fishes
-                        if self.fishes.count == 0 {
-                            self.tableView.isHidden = true
+                        if fishes.count == 0 && !self.wantToUpdate {
+                            self.noFishViewLabel.isHidden = false
+                        } else {
+                            for fish in fishes {
+                                if fish.aquarium == nil {
+                                    self.fishesWithoutAquarium.append(fish)
+                                } else {
+                                    self.fishes.append(fish)
+                                }
+                            }
+                            self.noFishViewLabel.isHidden = true
                         }
+                        self.fishesWithoutAquarium += self.fishes
                         self.tableView.reloadData()
                     }
                     
                 case .failure:
                     if response.response?.statusCode == 204 {
-                        self.okAlert(title: "Oups", message: "Aucun poisson enregistré")
+                        
                     } else {
                         self.okAlert(title: "Erreur", message: "Erreur Get Fishes \(String(describing: response.response?.statusCode))")
+                    }
+                    if !self.wantToUpdate {
+                        self.noFishViewLabel.isHidden = true
                     }
                 }
             }
@@ -266,13 +281,20 @@ extension CreateAquarium: UIPickerViewDelegate, UIPickerViewDataSource {
 
 extension CreateAquarium: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.fishes.count
+        return self.fishesWithoutAquarium.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
         cell.view.backgroundColor = UIColor(red: 241, green: 250, blue: 248)
-        cell.bindData(title: self.fishes[indexPath.row].name)
+        for fish in self.fishesWithoutAquarium {
+            if fish.aquarium == nil {
+                cell.bindData(title: self.fishesWithoutAquarium[indexPath.row].name!)
+            } else {
+                cell.bindData(title: self.fishesWithoutAquarium[indexPath.row].name!, nameAquarium: self.fishesWithoutAquarium[indexPath.row].aquarium?.name)
+            }
+        }
+        
         
         return cell
     }

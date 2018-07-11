@@ -33,6 +33,7 @@ class CreateFishVC: DefaultVC {
         self.pickerView.delegate = self
         self.pickerView.dataSource = self
         self.nameTextField.delegate = self
+        self.sizeTextField.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
@@ -124,12 +125,15 @@ class CreateFishVC: DefaultVC {
     }
     
     @IBAction func submitButtonClicked(_ sender: Any) {
-        if (self.nameTextField.text?.isEmpty)! && (self.sizeTextField.text?.isEmpty)! {
+        if (self.nameTextField.text?.isEmpty)! || (self.sizeTextField.text?.isEmpty)! {
             self.okAlert(title: "Erreur", message: "Entrez un nom et une taille")
         } else {
-            self.requestCreateFish(name: self.nameTextField.text!, speciesId: self.select, size: Double(self.sizeTextField.text!)!, idAquarium: self.selectedAquarium?.id)
+            if let size = Double(self.sizeTextField.text!) {
+                self.requestCreateFish(name: self.nameTextField.text!, speciesId: self.select, size: size, idAquarium: self.selectedAquarium?.id)
+            } else {
+                self.okAlert(title: "Erreur", message: "Entrez une taille valable")
+            }
         }
-        
     }
 }
 
@@ -162,7 +166,7 @@ extension CreateFishVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "simpleCell", for: indexPath) as! SimpleCell
         cell.view.backgroundColor = UIColor(red: 226, green: 241, blue: 243)
-        cell.bindData(title: self.aquariums[indexPath.row].name)
+        cell.bindData(title: self.aquariums[indexPath.row].name!)
         
         return cell
     }

@@ -58,8 +58,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66Z-oG-uQK">
                                                 <rect key="frame" x="0.0" y="60" width="375" height="50"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoris:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr8-3k-wl9">
-                                                        <rect key="frame" x="40" y="16" width="53" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favori:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr8-3k-wl9">
+                                                        <rect key="frame" x="40" y="16" width="45" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -122,8 +122,8 @@
                                                             <constraint firstAttribute="height" constant="1" id="fFu-cs-xld"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes poissons: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t24-Us-RXP">
-                                                        <rect key="frame" x="40" y="31" width="102" height="18"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes poissons disponibles: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t24-Us-RXP">
+                                                        <rect key="frame" x="40" y="31" width="184" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -138,13 +138,46 @@
                                                     <constraint firstItem="3FE-Co-8OQ" firstAttribute="top" secondItem="84E-uY-eCO" secondAttribute="top" constant="10" id="vh6-Q3-Tfi"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-AK-KeM">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-tU-gXe">
                                                 <rect key="frame" x="0.0" y="350" width="375" height="160"/>
+                                                <subviews>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-AK-KeM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="160" id="2nA-fn-hVT"/>
+                                                        </constraints>
+                                                    </tableView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgO-AM-Tkd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun poisson disponible" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTZ-dB-szG">
+                                                                <rect key="frame" x="101.5" y="71" width="173.5" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                                <color key="textColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="QTZ-dB-szG" firstAttribute="centerX" secondItem="KgO-AM-Tkd" secondAttribute="centerX" id="0ie-w9-Cse"/>
+                                                            <constraint firstItem="QTZ-dB-szG" firstAttribute="centerY" secondItem="KgO-AM-Tkd" secondAttribute="centerY" id="Mwx-I8-dOE"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="2nA-fn-hVT"/>
+                                                    <constraint firstItem="LlH-AK-KeM" firstAttribute="leading" secondItem="AY2-tU-gXe" secondAttribute="leading" id="22Q-at-7tE"/>
+                                                    <constraint firstAttribute="height" constant="160" id="R0e-Kb-Gfy"/>
+                                                    <constraint firstAttribute="trailing" secondItem="KgO-AM-Tkd" secondAttribute="trailing" id="RoR-yV-oK6"/>
+                                                    <constraint firstAttribute="bottom" secondItem="KgO-AM-Tkd" secondAttribute="bottom" id="a7b-Y2-ZQa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LlH-AK-KeM" secondAttribute="trailing" id="gLb-mN-YZO"/>
+                                                    <constraint firstItem="LlH-AK-KeM" firstAttribute="top" secondItem="AY2-tU-gXe" secondAttribute="top" id="kks-bn-Z0N"/>
+                                                    <constraint firstItem="KgO-AM-Tkd" firstAttribute="top" secondItem="AY2-tU-gXe" secondAttribute="top" id="lDv-wc-pWh"/>
+                                                    <constraint firstItem="KgO-AM-Tkd" firstAttribute="leading" secondItem="AY2-tU-gXe" secondAttribute="leading" id="sbl-rP-gIP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LlH-AK-KeM" secondAttribute="bottom" id="ymD-PZ-On3"/>
                                                 </constraints>
-                                            </tableView>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY7-PW-PAH">
                                                 <rect key="frame" x="0.0" y="510" width="375" height="30"/>
                                                 <subviews>
@@ -296,10 +329,12 @@
                         <outlet property="hourPickerView" destination="FrN-KU-yu6" id="RTG-vi-u9x"/>
                         <outlet property="minutePickerView" destination="MQ2-cx-Fpy" id="Ofp-S5-F0J"/>
                         <outlet property="nameTextField" destination="73i-c1-rUl" id="gJG-PU-sGT"/>
+                        <outlet property="noFishViewLabel" destination="KgO-AM-Tkd" id="YYV-5t-TkT"/>
                         <outlet property="separatorFishView" destination="84E-uY-eCO" id="LfE-x5-jJW"/>
                         <outlet property="submitButton" destination="oum-VN-04B" id="3sC-fn-ZRl"/>
                         <outlet property="switchFavoris" destination="BNu-ku-4N8" id="PoT-Qz-7eI"/>
                         <outlet property="tableView" destination="LlH-AK-KeM" id="jlV-tC-s6C"/>
+                        <outlet property="viewTableView" destination="AY2-tU-gXe" id="NJY-ns-BHo"/>
                         <outlet property="volumePickerView" destination="ZLi-TK-trF" id="rQT-LE-bhr"/>
                     </connections>
                 </viewController>

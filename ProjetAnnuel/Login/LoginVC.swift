@@ -63,6 +63,11 @@ class LoginVC: DefaultVC {
                 
             case .failure:
                 self.activityIndicator.stopAnimating()
+                if response.response?.statusCode == 404 {
+                    self.okAlert(title: "Erreur", message: "Utilisateur non trouvé")
+                } else if response.response?.statusCode == 403 {
+                    self.okAlert(title: "Erreur", message: "Identifiants incorrects")
+                }
                 self.okAlert(title: "Erreur", message: "Erreur Auth \(String(describing: response.response?.statusCode))")
             }
         })

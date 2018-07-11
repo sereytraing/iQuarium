@@ -403,6 +403,7 @@
                     <navigationItem key="navigationItem" id="krT-c3-cLv"/>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
+                        <outlet property="feedFishView" destination="bv0-Kh-8FX" id="t3N-xr-nWo"/>
                         <outlet property="homeView" destination="Pam-R8-cny" id="nXL-gQ-04j"/>
                         <outlet property="isDirtyLabel" destination="k5v-NR-fTY" id="UUi-Jd-w1Q"/>
                         <outlet property="mesAquariumsView" destination="s0N-6I-nlK" id="v0e-l6-XE9"/>

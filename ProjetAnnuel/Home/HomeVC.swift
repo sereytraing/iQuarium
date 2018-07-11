@@ -21,6 +21,7 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
     @IBOutlet weak var mesAquariumsView: UIView!
     @IBOutlet weak var mesPoissonsView: UIView!
     
+    @IBOutlet weak var feedFishView: UIView!
     @IBOutlet weak var nameAquarium: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var isDirtyLabel: UILabel!
@@ -93,6 +94,7 @@ class HomeVC: DefaultVC, UIScrollViewDelegate{
                 } else {
                     self.temperatureLabel.text = "- °C"
                 }
+                self.feedFishView.isHidden = aquarium.fishes?.count == 0
             }
             return
         }

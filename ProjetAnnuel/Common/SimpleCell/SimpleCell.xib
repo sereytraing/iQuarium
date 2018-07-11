@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +20,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5B-p8-5O5">
-                        <rect key="frame" x="20" y="13.5" width="335" height="18"/>
+                        <rect key="frame" x="20" y="13.5" width="202.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <color key="textColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AqUaRiUm" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="sBy-vG-si8">
+                        <rect key="frame" x="242.5" y="13.5" width="112.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                         <color key="textColor" red="0.23628527660000001" green="0.33476802960000002" blue="0.47499603429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -27,11 +34,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="X5B-p8-5O5" firstAttribute="leading" secondItem="Ryu-Qp-urH" secondAttribute="leading" constant="20" id="0bL-dm-h6v"/>
+                    <constraint firstItem="sBy-vG-si8" firstAttribute="width" secondItem="Ryu-Qp-urH" secondAttribute="width" multiplier="0.3" id="H1i-ey-aqV"/>
+                    <constraint firstItem="sBy-vG-si8" firstAttribute="centerY" secondItem="Ryu-Qp-urH" secondAttribute="centerY" id="ICJ-gH-S7J"/>
                     <constraint firstItem="X5B-p8-5O5" firstAttribute="centerY" secondItem="Ryu-Qp-urH" secondAttribute="centerY" id="JH1-ly-gjM"/>
-                    <constraint firstAttribute="trailing" secondItem="X5B-p8-5O5" secondAttribute="trailing" constant="20" id="NR2-FF-GqP"/>
+                    <constraint firstItem="sBy-vG-si8" firstAttribute="leading" secondItem="X5B-p8-5O5" secondAttribute="trailing" constant="20" id="Met-Eu-Jhd"/>
+                    <constraint firstAttribute="trailing" secondItem="sBy-vG-si8" secondAttribute="trailing" constant="20" id="W4o-n1-mtc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="aquariumLabel" destination="sBy-vG-si8" id="sdu-Xx-van"/>
                 <outlet property="titleLabel" destination="X5B-p8-5O5" id="Ptt-bL-d6Q"/>
                 <outlet property="view" destination="Ryu-Qp-urH" id="YUr-oC-5Zk"/>
             </connections>

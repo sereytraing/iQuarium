@@ -12,6 +12,7 @@ class SimpleCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var view: UIView!
+    @IBOutlet weak var aquariumLabel: UILabel!
     
     var title: String?
     
@@ -19,8 +20,11 @@ class SimpleCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func bindData(title: String?) {
-        titleLabel.text = title        
+    func bindData(title: String, nameAquarium: String? = nil) {
+        titleLabel.text = title
+        if nameAquarium != nil {
+            aquariumLabel.text = nameAquarium
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
