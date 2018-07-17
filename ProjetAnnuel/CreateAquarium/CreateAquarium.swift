@@ -43,6 +43,7 @@ class CreateAquarium: DefaultVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.requestGetFishes()
         self.volumePickerView.delegate = self
         self.volumePickerView.dataSource = self
         self.hourPickerView.delegate = self
@@ -64,13 +65,12 @@ class CreateAquarium: DefaultVC {
         self.addFishButton.layer.borderColor = UIColor.white.cgColor
         self.tableView.register(UINib(nibName: "SimpleCell", bundle: nil), forCellReuseIdentifier: "simpleCell")
         self.addFishButtonView.isHidden = self.wantToUpdate
-        self.separatorFishView.isHidden = self.wantToUpdate
-        self.viewTableView.isHidden = self.wantToUpdate
+        //self.separatorFishView.isHidden = self.wantToUpdate
+        //self.viewTableView.isHidden = self.wantToUpdate
         if self.wantToUpdate && self.aquariumToUpdate != nil {
             self.nameTextField.text = self.aquariumToUpdate?.name
             self.switchFavoris.isOn = (self.aquariumToUpdate?.isFavorite)!
         }
-        self.requestGetFishes()
         if self.wantToUpdate {
             self.title = "Modifier un aquarium"
         } else {
@@ -108,24 +108,26 @@ class CreateAquarium: DefaultVC {
             var temp: Double?
             if !self.selectedIndexes.isEmpty {
                 for index in self.selectedIndexes {
-                    selectedFishes.append(self.fishes[index].id!)
-                    if tempMin == nil {
-                        tempMin = self.fishes[index].species?.tempMin
-                    } else {
-                        if tempMin! < (self.fishes[index].species?.tempMin!)! {
-                            tempMin = self.fishes[index].species?.tempMin
+                    if self.fishesWithoutAquarium.indices.contains(index)  {
+                        selectedFishes.append(self.fishesWithoutAquarium[index].id!)
+                        if tempMin == nil {
+                            tempMin = self.fishesWithoutAquarium[index].species?.tempMin
+                        } else {
+                            if tempMin! < (self.fishesWithoutAquarium[index].species?.tempMin!)! {
+                                tempMin = self.fishesWithoutAquarium[index].species?.tempMin
+                            }
                         }
-                    }
-                    
-                    if tempMax == nil {
-                        tempMax = self.fishes[index].species?.tempMax
-                    } else {
-                        if tempMax! > (self.fishes[index].species?.tempMax!)! {
-                            tempMax = self.fishes[index].species?.tempMax
+                        
+                        if tempMax == nil {
+                            tempMax = self.fishesWithoutAquarium[index].species?.tempMax
+                        } else {
+                            if tempMax! > (self.fishesWithoutAquarium[index].species?.tempMax!)! {
+                                tempMax = self.fishesWithoutAquarium[index].species?.tempMax
+                            }
                         }
-                    }
-                    if tempMax != nil && tempMin != nil {
-                        temp = ( tempMax! + tempMin! ) / 2.0
+                        if tempMax != nil && tempMin != nil {
+                            temp = ( tempMax! + tempMin! ) / 2.0
+                        }
                     }
                 }
             }
@@ -181,7 +183,9 @@ class CreateAquarium: DefaultVC {
                 case .success:
                     if let fishes = response.result.value {
                         if fishes.count == 0 && !self.wantToUpdate {
-                            self.noFishViewLabel.isHidden = false
+                            self.separatorFishView.isHidden = true
+                            self.viewTableView.isHidden = true
+                            
                         } else {
                             for fish in fishes {
                                 if fish.aquarium == nil {
@@ -198,7 +202,9 @@ class CreateAquarium: DefaultVC {
                     
                 case .failure:
                     if response.response?.statusCode == 204 {
-                        
+                        self.noFishViewLabel.isHidden = false
+                        self.separatorFishView.isHidden = true
+                        self.viewTableView.isHidden = true
                     } else {
                         self.okAlert(title: "Erreur", message: "Erreur Get Fishes \(String(describing: response.response?.statusCode))")
                     }

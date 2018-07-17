@@ -23,7 +23,10 @@ class SimpleCell: UITableViewCell {
     func bindData(title: String, nameAquarium: String? = nil) {
         titleLabel.text = title
         if nameAquarium != nil {
+            aquariumLabel.isHidden = false
             aquariumLabel.text = nameAquarium
+        } else {
+            aquariumLabel.isHidden = true
         }
     }
     
