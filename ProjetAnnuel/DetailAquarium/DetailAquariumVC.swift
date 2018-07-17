@@ -46,7 +46,7 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
     func bindData() {
         if let aquarium = aquarium {
             self.title = aquarium.name
-            self.volumeLabel.text = "\(String(describing: aquarium.volume!)) m³"
+            self.volumeLabel.text = "\(String(describing: aquarium.volume!)) L"
             
             if aquarium.isDirty! {
                 self.isDirtyLabel.text = "Sale"
@@ -117,7 +117,7 @@ class DetailAquariumVC: DefaultVC, UIGestureRecognizerDelegate {
                     }))
                     self.present(alert, animated: true, completion: nil)
                 case .failure:
-                    self.okAlert(title: "Erreur", message: "Erreur Create Aquarium \(String(describing: response.response?.statusCode))")
+                    self.okAlert(title: "Erreur", message: "Erreur suppression Aquarium \(String(describing: response.response?.statusCode))")
                 }
             }
         })

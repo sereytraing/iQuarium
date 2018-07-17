@@ -211,7 +211,7 @@ class CreateAquarium: DefaultVC {
     }
     
     func requestUpdateAquarium(name: String, volume: Int, isFavorite: Bool, cycle: Int) {
-        let url = self.baseUrl + "/aquariums/"
+        let url = self.baseUrl + "/aquariums/" + (self.aquariumToUpdate?.id)!
         let parametersFoodConf = [
             "cycle": cycle
             ] as [String : Any]
@@ -235,7 +235,7 @@ class CreateAquarium: DefaultVC {
                     }))
                     self.present(alert, animated: true, completion: nil)
                 case .failure:
-                    self.okAlert(title: "Erreur", message: "Erreur Create Aquarium \(String(describing: response.response?.statusCode))")
+                    self.okAlert(title: "Erreur", message: "Erreur Update Aquarium \(String(describing: response.response?.statusCode))")
                 }
             }
         })

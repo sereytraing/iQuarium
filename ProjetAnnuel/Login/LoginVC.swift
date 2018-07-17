@@ -67,11 +67,13 @@ class LoginVC: DefaultVC {
                     self.okAlert(title: "Erreur", message: "Utilisateur non trouvé")
                 } else if response.response?.statusCode == 403 {
                     self.okAlert(title: "Erreur", message: "Identifiants incorrects")
+                } else if response.response == nil {
+                    self.okAlert(title: "Erreur", message: "Aucune réponse du serveur")
+                } else {
+                    self.okAlert(title: "Erreur", message: "Erreur Auth \(String(describing: response.response?.statusCode))")
                 }
-                self.okAlert(title: "Erreur", message: "Erreur Auth \(String(describing: response.response?.statusCode))")
             }
         })
-        
     }
     
     func requestGetProfile(token: String, username: String) {
