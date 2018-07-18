@@ -12,8 +12,8 @@ import AlamofireObjectMapper
 
 class DefaultVC: UIViewController {
     
-    let baseUrl = "http://iquarium.myftp.org:80"
-    
+    //let baseUrl = "http://iquarium.myftp.org:80"
+    let baseUrl =  "http://iquarium.ddns.net"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavBarStyle()
